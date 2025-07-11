@@ -1,4 +1,4 @@
-//priority: 1
+//priority: 10
 //Create Live 5 Custom Recipes
 //Author: Blizzor
 
