@@ -1,0 +1,232 @@
+{
+	"cl5.advjs.welcome.title": "Create Live 5!",
+	"cl5.advjs.welcome.description": "Welcome to Create Live 5!",
+
+	"cl5.advjs.item.cobblestone.title": "Stone Age",
+	"cl5.advjs.item.cobblestone.description": "Start the ball rolling",
+
+	"cl5.advjs.item.charcoal.title": "Coal, Coal, Coal",
+	"cl5.advjs.item.charcoal.description": "Burns better than wood",
+
+	"cl5.advjs.item.crushed_sunflower_seeds.title": "Shred the Sun",
+	"cl5.advjs.item.crushed_sunflower_seeds.description": "More versatile than you think",
+
+	"cl5.advjs.item.custom_travelers_backpack.title": "Bigger Inventory",
+	"cl5.advjs.item.custom_travelers_backpack.description": "More space to go please!",
+
+	"cl5.advjs.item.iron_ingot.title": "Iron Robbery",
+	"cl5.advjs.item.iron_ingot.description": "Give me that!",
+
+	"cl5.advjs.item.cog_crank.title": "Human Energy",
+	"cl5.advjs.item.cog_crank.description": "Hands on the cogs!",
+
+	"cl5.advjs.item.millstone.title": "Stone Miller",
+	"cl5.advjs.item.millstone.description": "Give me the grinder",
+
+	"cl5.advjs.item.sand.title": "Sandy",
+	"cl5.advjs.item.sand.description": "No sand in the gearbox",
+
+	"cl5.advjs.item.redstone.title": "Stone, but Red",
+	"cl5.advjs.item.redstone.description": "No Jo, not yours!",
+
+	"cl5.advjs.item.asurine.title": "Asurine",
+	"cl5.advjs.item.asurine.description": "Sunstone",
+
+	"cl5.advjs.item.calcite.title": "Calcium",
+	"cl5.advjs.item.calcite.description": "Good for your teeth",
+
+	"cl5.advjs.item.quartz.title": "Wait! What?",
+	"cl5.advjs.item.quartz.description": "Was probably pure quartz sand",
+
+	"cl5.advjs.item.andesite_alloy.title": "Finally!",
+	"cl5.advjs.item.andesite_alloy.description": "The era of technology begins!",
+
+	"cl5.advjs.item.andesite_casing.title": "Tier 1 Machinery",
+	"cl5.advjs.item.andesite_casing.description": "Time for machines!",
+
+	"cl5.advjs.item.water_wheel.title": "Hydropower!",
+	"cl5.advjs.item.water_wheel.description": "Harness the power of water",
+
+	"cl5.advjs.item.white_sail.title": "Power of the wind!",
+	"cl5.advjs.item.white_sail.description": "Set sail into the wind!",
+
+	"cl5.advjs.item.steam_engine.title": "High Energy",
+	"cl5.advjs.item.steam_engine.description": "James Watt would be proud!",
+
+	"cl5.advjs.item.generator_coil.title": "Electricity!",
+	"cl5.advjs.item.generator_coil.description": "Electricity from kinetic energy!",
+
+	"cl5.advjs.item.electrical_connector.title": "Electrical Connection",
+	"cl5.advjs.item.electrical_connector.description": "The beginning of a power grid!",
+
+	"cl5.advjs.item.basic_motor.title": "Electric Motor!",
+	"cl5.advjs.item.basic_motor.description": "Kinetic energy from electricity!",
+
+	"cl5.advjs.item.basic_solar_heating_plate.title": "Solar Energy",
+	"cl5.advjs.item.basic_solar_heating_plate.description": "The sun makes it hot!",
+
+	"cl5.advjs.item.heat_pipe.title": "Heat Pipes",
+	"cl5.advjs.item.heat_pipe.description": "We take the heat and move it somewhere else!",
+
+	"cl5.advjs.item.heat_pump.title": "Pump the Heat",
+	"cl5.advjs.item.heat_pump.description": "Heat can also be pumped",
+
+	"cl5.advjs.item.heater.title": "Better than Blazes",
+	"cl5.advjs.item.heater.description": "Blaze burners are stone age!",
+	
+	"cl5.advjs.item.shear_pin.title": "Mechanical Fuse",
+	"cl5.advjs.item.shear_pin.description": "Shaft circuit breaker",
+	
+	"cl5.advjs.item.brass_casing.title": "Tier 2 Machinery",
+	"cl5.advjs.item.brass_casing.description": "Better machines thanks to brass!",
+	
+	"cl5.advjs.item.storage_terminal.title": "High-End Storage",
+	"cl5.advjs.item.storage_terminal.description": "Almost too good to be true",
+	
+	"cl5.advjs.item.mechanical_extruder.title": "Auto-Cobble",
+	"cl5.advjs.item.mechanical_extruder.description": "Better than drills",
+	
+	"cl5.advjs.item.deforester_saw.title": "Bye Rainforest",
+	"cl5.advjs.item.deforester_saw.description": "Advanced deforestation",
+	
+	"cl5.advjs.item.item_vault.title": "Item Vault",
+	"cl5.advjs.item.item_vault.description": "Endless storage!",
+	
+	"cl5.advjs.item.chromatic_compound.title": "High-Tier Material",
+	"cl5.advjs.item.chromatic_compound.description": "It gets expensive from now on",
+	
+	"cl5.advjs.item.mechanical_spawner.title": "Custom Spawner",
+	"cl5.advjs.item.mechanical_spawner.description": "Spawners? I'll build them myself!",
+	
+	"cl5.advjs.item.spawn_fluid_random_bucket.title": "Spawner Fluid",
+	"cl5.advjs.item.spawn_fluid_random_bucket.description": "It's not 4free!",
+	
+	"cl5.advjs.item.crushing_wheel.title": "Advanced Crushing",
+	"cl5.advjs.item.crushing_wheel.description": "Grinder for advanced users",
+	
+	"cl5.advjs.item.tweaked_linked_controller.title": "Gamecontroller",
+	"cl5.advjs.item.tweaked_linked_controller.description": "Hardware meets software",
+	
+	"cl5.advjs.item.stargaze_singularity.title": "Stargaze Singularity",
+	"cl5.advjs.item.stargaze_singularity.description": "Per aspera ad astra",
+	
+	"cl5.advjs.item.crafting_terminal.title": "Nearly ME System",
+	"cl5.advjs.item.crafting_terminal.description": "Final stage of the storage system",
+	
+	"cl5.advjs.item.infablocks.title": "Infinite Blocks!",
+	"cl5.advjs.item.infablocks.description": "Gaia to go",
+	
+	"cl5.advjs.item.stargaze_singularity_casing.title": "Power of the Celestials",
+	"cl5.advjs.item.stargaze_singularity_casing.description": "This is where the path to ultimate power begins!",
+	
+	"cl5.advjs.item.refined_radiance.title": "Refined Situation",
+	"cl5.advjs.item.refined_radiance.description": "Stored light",
+	
+	"cl5.advjs.item.creator_helmet.title": "Odins Helmet",
+	"cl5.advjs.item.creator_helmet.description": "Father of wisdom!",
+	
+	"cl5.advjs.item.creator_chestplate.title": "Zephyrs Chestplate",
+	"cl5.advjs.item.creator_chestplate.description": "Wind of freedom!",
+	
+	"cl5.advjs.item.creator_leggings.title": "Mercurys Leggings",
+	"cl5.advjs.item.creator_leggings.description": "Cunning trade!",
+	
+	"cl5.advjs.item.creator_boots.title": "Hermes Boots!",
+	"cl5.advjs.item.creator_boots.description": "Faster than your internet!",
+	
+	"cl5.advjs.item.netherite_ingot.title": "Compressed Debris",
+	"cl5.advjs.item.netherite_ingot.description": "Fresh from hell",
+	
+	"cl5.advjs.item.stargaze_plate.title": "Material from outer Space",
+	"cl5.advjs.item.stargaze_plate.description": "Power of the lunar fog, open up!",
+	
+	"cl5.advjs.item.blaze_gold.title": "Blaze in a Box",
+	"cl5.advjs.item.blaze_gold.description": "The soul of a Blaze!",
+	
+	"cl5.advjs.item.blaze_plate.title": "Power of the Blazes",
+	"cl5.advjs.item.blaze_plate.description": "From Prometheus' forge",
+
+	"cl5.advjs.item.blaze_plate_rod.title": "Compact Blazepower",
+	"cl5.advjs.item.blaze_plate_rod.description": "The rod radiates warmth",
+
+	"cl5.advjs.item.creator_sword.title": "Creator Sword",
+	"cl5.advjs.item.creator_sword.description": "This turns the Ender Dragon into a chick!",
+
+	"cl5.advjs.item.creator_shovel.title": "Creator Shovel",
+	"cl5.advjs.item.creator_shovel.description": "Dig your own ... Earth empire!",
+
+	"cl5.advjs.item.creator_pickaxe.title": "Creator Pickaxe",
+	"cl5.advjs.item.creator_pickaxe.description": "It's easy to build with it!",
+
+	"cl5.advjs.item.creator_axe.title": "Creator Axe",
+	"cl5.advjs.item.creator_axe.description": "Lumberjacks love this tool!",
+
+	"cl5.advjs.item.creator_hoe.title": "Creator Hoe",
+	"cl5.advjs.item.creator_hoe.description": "This item is a sign of wealth!",
+
+	"cl5.advjs.item.mithril_ingot.title": "Dwarves mystical Metal",
+	"cl5.advjs.item.mithril_ingot.description": "Made in Middle-earth",
+	
+	"cl5.advjs.dimension.the_end.title": "The End, but different",
+	"cl5.advjs.dimension.the_end.description": "But that's not the way I know!",
+	
+	"cl5.advjs.item.forest_ravager.title": "Like the Saw, but fancier",
+	"cl5.advjs.item.forest_ravager.description": "Forged from the steel of the dwarves",
+	
+	"cl5.advjs.item.dragon_egg.title": "I HAVE THE EGG!!!",
+	"cl5.advjs.item.dragon_egg.description": "Congratulations!",
+
+	"cl5.advjs.item.shimmer_nugget.title": "The SHIMMER!",
+	"cl5.advjs.item.shimmer_nugget.description": "I haven't got a shimmer!",
+
+	"cl5.advjs.item.diorite.title": "Ewwww!",
+	"cl5.advjs.item.diorite.description": "Stone + Pigeon",
+
+	"cl5.advjs.item.quartz_dust.title": "Garbage Disposal",
+	"cl5.advjs.item.quartz_dust.description": "Away with the dirt!",
+
+	"cl5.advjs.kill.iron_golem.title": "Nice try!",
+	"cl5.advjs.kill.iron_golem.description": "But Bre only has flowers!",
+
+	"cl5.advjs.item.create_shredder.title": "Capitalism Final Stage!",
+	"cl5.advjs.item.create_shredder.description": "Off to the shredder with the excess!",
+
+	"cl5.advjs.item.cannon_builder.title": "Arming!",
+	"cl5.advjs.item.cannon_builder.description": "The cannon must be big",
+
+	"cl5.advjs.item.encased_fan.title": "Better Smelting",
+	"cl5.advjs.item.encased_fan.description": "Coal is a thing of the past",
+
+	"cl5.advjs.item.industrial_fan.title": "Industrial Smelting",
+	"cl5.advjs.item.industrial_fan.description": "Worthy of a fire nation!",
+
+	"cl5.advjs.item.sniffer_egg.title": "He Sniffs everything!",
+	"cl5.advjs.item.sniffer_egg.description": "There are items buried in the grass?",
+
+	"cl5.advjs.item.kelp.title": "Jackpot!",
+	"cl5.advjs.item.kelp.description": "Assembly lines at last!",
+
+	"cl5.advjs.item.bamboo.title": "Jungle Fever",
+	"cl5.advjs.item.bamboo.description": "You want me to make sugar with this?",
+
+	"cl5.advjs.item.soybean.title": "Vegan Challenge",
+	"cl5.advjs.item.soybean.description": "On your soybeans, get set, go!",
+
+	"cl5.advjs.item.tofu.title": "Tofu à la carte",
+	"cl5.advjs.item.tofu.description": "You can make anything out of it!",
+
+	"cl5.advjs.item.leather_substitute.title": "Vegan Leather Seats!",
+	"cl5.advjs.item.leather_substitute.description": "Easier to maintain than the original",
+
+	"cl5.advjs.item.blaze_burner.title": "MORE HEAT!!",
+	"cl5.advjs.item.blaze_burner.description": "Hot, hotter, Blazeburner!",
+
+	"cl5.advjs.item.blaze_cake.title": "It's Over 9000!",
+	"cl5.advjs.item.blaze_cake.description": "Only plasma is hotter!",
+
+	"cl5.advjs.item.infinity_wand.title": "Wandalism!",
+	"cl5.advjs.item.infinity_wand.description": "What do you Wand from me?",
+
+	"cl5.advjs.item.creative_filling_tank.title": "Unlimited Jetpack Fuel!",
+	"cl5.advjs.item.creative_filling_tank.description": "H² is the future, my ass"
+}
