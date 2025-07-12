@@ -1,0 +1,8 @@
+<button onclick="openFolder()">Open Folder</button>
+<script>
+    function openFolder() {
+        var folderPath = "C:\\path\\to\\your\\folder";
+        var shell = new ActiveXObject("WScript.Shell");
+        shell.Run("explorer " + folderPath);
+    }
+</script>
