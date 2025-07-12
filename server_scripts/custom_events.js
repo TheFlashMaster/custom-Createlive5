@@ -4,8 +4,7 @@
 //! Custom Join Message
 PlayerEvents.loggedIn((event) => {
     // Get the player object
-    const player = event.player;
-    const server = event.server;
+    const {player, server} = event;
 
     // Send a welcome message to the player
     server.runCommand(`title ${player.name.string} title {"text":"Welcome to the Server","color":"gold"}`);
