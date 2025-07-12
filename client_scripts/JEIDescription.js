@@ -1,6 +1,6 @@
 JEIEvents.information((event) => {
-  event.addItem("minecraft:create_power_loader:empty_andesite_chunk_loader ", "Look at the Shop at Spawn");
-    event.addItem("minecraft:create_power_loader:empty_brass_chunk_loader ", "Look at the Shop at Spawn");
+  event.addItem("create_power_loader:empty_andesite_chunk_loader ", "Look at the Shop at Spawn");
+    event.addItem("create_power_loader:empty_brass_chunk_loader ", "Look at the Shop at Spawn");
 
   event.addItem("minecraft:echo_shard", "§oMaybe a Warden will drop it?");
   event.addItem("minecraft:elytra", [
