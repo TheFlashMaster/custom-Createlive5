@@ -10,6 +10,7 @@ ServerEvents.recipes((event) => {
       X: "create_dd:coal_piece",
     }
   );
+  //! Custom Crafting Terminal Recipe
   event.recipes.create.mechanical_crafting(
     "toms_storage:ts.crafting_terminal",
     ["XXXXX", "XAHDX", "XBGEX", "XCIFX", "XXXXX"],
@@ -91,6 +92,7 @@ ServerEvents.recipes((event) => {
       S: "minecraft:string",
     }
   );
+  //! Simplified Creator Armor and Tools
   event.recipes.create.mechanical_crafting(
     "kubejs:disabled_creator_helmet",
     [

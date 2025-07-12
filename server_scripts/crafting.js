@@ -3,9 +3,7 @@
 //Author: Blizzor
 
 ServerEvents.recipes((event) => {
-  event.shapeless("8x create_dd:coal_piece", [
-  "minecraft:charcoal",
-  ]);
+  event.shapeless("8x create_dd:coal_piece", ["minecraft:charcoal"]);
   //event.shapeless("2x create_bic_bit:sunflower_seeds", ["minecraft:sunflower"]);
   event.shapeless("minecraft:tube_coral_block", [
     "4x minecraft:tube_coral_fan",
@@ -37,12 +35,14 @@ ServerEvents.recipes((event) => {
     "2x minecraft:calcite",
     "4x minecraft:quartz",
   ]);
+  //! Shapeless Granite for automation
   event.shapeless("4x minecraft:granite", [
     "4x minecraft:sand",
     "1x minecraft:quartz",
   ]);
   event.shapeless("9x create_dd:diamond_shard", ["minecraft:diamond"]);
   event.shapeless("1x minecraft:diamond", "9x create_dd:diamond_shard");
+  //! Missing wireless terminal recipe
 	event.shaped("1x toms_storage:ts.wireless_terminal", ["SMS", "YGF", "SES"], {
     S: "create_connected:item_silo",
     M: "create_dd:integrated_mechanism",

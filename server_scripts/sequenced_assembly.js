@@ -3,6 +3,7 @@
 //Author: Blizzor
 
 ServerEvents.recipes((event) => {
+  //! Custom Adv Wireless Terminal Recipe
   let wireless_terminal = "toms_storage:ts.wireless_terminal";
   event.recipes.create
     .sequenced_assembly("toms_storage:ts.adv_wireless_terminal", "toms_storage:ts.wireless_terminal", [
@@ -215,7 +216,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem(labeled_can)
     .loops(4);
-
+    //! Removed old crafting for crafting terminal
 /*  let terminal = "toms_storage:ts.storage_terminal";
   event.recipes.create
     .sequenced_assembly(

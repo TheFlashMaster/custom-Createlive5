@@ -1,7 +1,7 @@
 //priority: 10
 //Create Live 5 Custom Recipes
 //Author: Blizzor
-
+//! Custom Join Message
 PlayerEvents.loggedIn((event) => {
     // Get the player object
     const player = event.player;

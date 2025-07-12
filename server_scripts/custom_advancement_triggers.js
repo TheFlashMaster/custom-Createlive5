@@ -1,8 +1,11 @@
+//! Custom Advancement Trigger for Create Live 5
 const STRESSOMETER_SU_NBT_KEY = 'Network.Capacity'; // Example: 'stressCapacity', 'networkStress', etc.
 const REQUIRED_SU_FOR_ADVANCEMENT = 5000;
 
 BlockEvents.rightClicked('create:stressometer', event => {
-    if (!event.block.entity) return;
+    if (!event.block.entity) {
+        return;
+    }
 
     const nbt = event.block.entity.getUpdateTag();
     const currentSU = nbt?.Network?.Capacity ?? 0; // Access nested NBT safely

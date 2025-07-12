@@ -9,7 +9,7 @@
     event.cancel()
   }
 })*/
-
+//! Info Command for Server
 const message = ["",{"text":"Serverinformationen \u2013 Create Live 5","bold":true,"underlined":true},{"text":"\n\n"},{"text":"Chunkloader & Rezeptänderungen","bold":true},{"text":"\n\nChunkloader sind im Shop erhältlich. Es gibt nur ein begrenztes Sortiment.\n\nEinige Rezepte wurden im Vergleich zum Originalmodpack angepasst. Schau in JEI für alle neuen Crafting-Details!\n\nDu willst dieselben Einstellungen im Singleplayer? Lade dir einfach die KubeJS-Konfigurationsdatei vom Server herunter und integriere sie lokal.\n\nWenn du Hilfe brauchst kontaktiere @BlockworldHD oder @The_FlashMaster.\n\nViel Spaß beim Spielen\n"}]
 ServerEvents.commandRegistry((event) => {
   //command registry event
@@ -47,6 +47,7 @@ ServerEvents.commandRegistry((event) => {
     })
   );
 });
+//! Sheduled Restart Command for Server
 
 // Global variables for restart scheduling
 let restartScheduled = false;

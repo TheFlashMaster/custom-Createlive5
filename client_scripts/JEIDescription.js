@@ -1,4 +1,5 @@
 JEIEvents.information((event) => {
+  //!Custom JEI information
   event.addItem("create_power_loader:empty_andesite_chunk_loader", "Look at the Shop at Spawn");
   event.addItem("create_power_loader:empty_brass_chunk_loader", "Look at the Shop at Spawn");
 

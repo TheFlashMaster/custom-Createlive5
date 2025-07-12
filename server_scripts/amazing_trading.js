@@ -3,6 +3,8 @@ ATEvents.mapping((event) => {
   event.setRP("kubejs:shimmer_nugget", 4096);
   event.setRP("create_dd:fallen_stargaze_singularity", 1200);
   event.setRP("create_dd:stargaze_singularity", 1500);
+
+  //! Custom RP values for chunk loaders
   event.setRP("create_power_loader:empty_andesite_chunk_loader", 1600);
   event.setRP("create_power_loader:empty_brass_chunk_loader", 4000);
   event.setRP("create_power_loader:andesite_chunk_loader", 2500);

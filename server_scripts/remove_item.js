@@ -28,6 +28,7 @@ let hideItemsFromEMI = [
   "toms_storage:ts.inventory_hopper_basic",
   "toms_storage:ts.level_emitter",
   "toms_storage:ts.paint_kit",
+  //! Dont hide wireless terminal
 //  "toms_storage:ts.wireless_terminal",
 //  "toms_storage:ts.adv_wireless_terminal",
   "toms_storage:ts.item_filter",
