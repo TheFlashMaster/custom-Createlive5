@@ -1,7 +1,0 @@
-{
-	"credit": "byCatrop",
-	"parent": "kubejs:item/creator_tools",
-	"textures": {
-		"layer0": "kubejs:item/creator_axe"
-	}
-}
