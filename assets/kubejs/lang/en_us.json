@@ -230,9 +230,138 @@
 	"cl5.advjs.item.creative_filling_tank.title": "Unlimited Jetpack Fuel!",
 	"cl5.advjs.item.creative_filling_tank.description": "H² is the future, my ass",
 
-	"cl5.advjs.stress.stress_unit.title": "High Performance Network",
-	"cl5.advjs.stress.stress_unit.description": "Observe a kinetic network with at least 100000 SU capacity",
+	"cl5.advjs.extra.title": "Create Live 5 Extra",
+	"cl5.advjs.extra.description": "Extended challenges for Create Live 5",
 
-	"cl5.advjs.extra.title": "Create Live 5 Extras",
-	"cl5.advjs.extra.description": "Extras Challenges for Create Live 5!"
+	"cl5.advjs.tech.high_rpm.title": "High Speed",
+	"cl5.advjs.tech.high_rpm.description": "Operate a machine at over 256 RPM",
+
+	"cl5.advjs.stress.stress_basics.title": "Stress Basics",
+	"cl5.advjs.stress.stress_basics.description": "Achieve a stress level of over 100,000 SU",
+
+	"cl5.advjs.tech.steam_giant.title": "Steam Giant",
+	"cl5.advjs.tech.steam_giant.description": "Build a 10x10x10 steam engine providing maximum power",
+
+	"cl5.advjs.tech.high_stress.title": "High Stress",
+	"cl5.advjs.tech.high_stress.description": "Achieve a stress level of over 1,000,000 SU",
+
+	"cl5.advjs.tech.machine_park.title": "Machine Park",
+	"cl5.advjs.tech.machine_park.description": "Build 50 different Create machines running simultaneously",
+
+	"cl5.advjs.tech.mechanism_master.title": "Mechanism Master",
+	"cl5.advjs.tech.mechanism_master.description": "Craft all 17 different mechanisms at least once",
+
+	"cl5.advjs.tech.auto_mechanisms.title": "Automated Mechanisms",
+	"cl5.advjs.tech.auto_mechanisms.description": "Create a system that automatically crafts mechanisms without your intervention",
+
+	"cl5.advjs.tech.massive_machinery.title": "Massive Machinery",
+	"cl5.advjs.tech.massive_machinery.description": "Build a single assembly line that is at least 50 blocks long",
+
+	"cl5.advjs.tech.long_conveyors.title": "Long Conveyors",
+	"cl5.advjs.tech.long_conveyors.description": "Create a continuous conveyor belt system over 500 blocks long",
+
+	"cl5.advjs.tech.terminal_master.title": "Terminal Master",
+	"cl5.advjs.tech.terminal_master.description": "Craft your first Create terminal",
+
+	"cl5.advjs.tech.wireless_connected.title": "Wirelessly Connected",
+	"cl5.advjs.tech.wireless_connected.description": "Use your terminal from 100 blocks away",
+
+	"cl5.advjs.tech.cross_dimensional.title": "Cross-Dimensional",
+	"cl5.advjs.tech.cross_dimensional.description": "Use your terminal from another dimension",
+
+	"cl5.advjs.tech.long_train_ride.title": "Long Train Ride",
+	"cl5.advjs.tech.long_train_ride.description": "Run a train over 1,000 blocks without stopping",
+
+	"cl5.advjs.tech.reverse_gear.title": "Reverse Gear",
+	"cl5.advjs.tech.reverse_gear.description": "Drive a train at least 100 blocks in reverse",
+
+	"cl5.advjs.challenge.casing_master.title": "Casing Master",
+	"cl5.advjs.challenge.casing_master.description": "Place each of the 16 different casing types",
+
+	"cl5.advjs.tech.creative_power.title": "Creative Power",
+	"cl5.advjs.tech.creative_power.description": "Craft all three Creative machines",
+
+	"cl5.advjs.tech.exoskeleton.title": "Exoskeleton",
+	"cl5.advjs.tech.exoskeleton.description": "Craft an exoskeleton",
+
+	"cl5.advjs.explore.flamethrower_expert.title": "Flamethrower Expert",
+	"cl5.advjs.explore.flamethrower_expert.description": "Use the flamethrower to defeat at least 20 mobs simultaneously (Warning: May impact performance!)",
+
+	"cl5.advjs.explore.drill_master.title": "Portable Drill Master",
+	"cl5.advjs.explore.drill_master.description": "Use the portable drill to mine 10,000 blocks",
+
+	"cl5.advjs.tech.chunk_loaded.title": "Chunk Loaded",
+	"cl5.advjs.tech.chunk_loaded.description": "Activate a chunk loader and keep 1 chunk loaded simultaneously",
+
+	"cl5.advjs.tech.chunk_master.title": "Chunk Master",
+	"cl5.advjs.tech.chunk_master.description": "Load at least 16 chunks with chunk loaders at the same time",
+
+	"cl5.advjs.challenge.bad_luck.title": "Bad Luck",
+	"cl5.advjs.challenge.bad_luck.description": "Experience 3 mechanisms failing in a row when crafting them",
+
+	"cl5.advjs.tech.stress_master.title": "Stress Master",
+	"cl5.advjs.tech.stress_master.description": "Keep your stress capacity at over 99% utilization for 10 minutes",
+
+	"cl5.advjs.challenge.island_hopping.title": "Island Hopping",
+	"cl5.advjs.challenge.island_hopping.description": "Spend a cumulative time of 24 hours on islands other than your starting island",
+
+	"cl5.advjs.explore.caves_cliffs.title": "Caves & Cliffs Exploration",
+	"cl5.advjs.explore.caves_cliffs.description": "Reach bedrock level and the build height limit in caves and cliffs with a Create elevator",
+
+	"cl5.advjs.explore.higher_possible.title": "Higher Than Possible",
+	"cl5.advjs.explore.higher_possible.description": "Fly for 5 minutes above the maximum build height",
+
+	"cl5.advjs.explore.area_expansion.title": "Area Expansion",
+	"cl5.advjs.explore.area_expansion.description": "Create a built area of 100x100 blocks on your skyblock island",
+
+	"cl5.advjs.explore.blueprint_master.title": "Blueprint Grandmaster",
+	"cl5.advjs.explore.blueprint_master.description": "Create a blueprint containing a structure of at least 256 blocks",
+
+	"cl5.advjs.explore.backpack_enthusiast.title": "Backpack Enthusiast",
+	"cl5.advjs.explore.backpack_enthusiast.description": "Fill the largest possible backpack completely with items",
+
+	"cl5.advjs.explore.backpack_collector.title": "Backpack Collector",
+	"cl5.advjs.explore.backpack_collector.description": "Collect all available backpacks in the game",
+
+	"cl5.advjs.explore.bucket_collector.title": "Bucket Collector",
+	"cl5.advjs.explore.bucket_collector.description": "Collect all buckets in the game, except fish buckets",
+
+	"cl5.advjs.explore.template_collector.title": "Template Collector",
+	"cl5.advjs.explore.template_collector.description": "Collect all different templates in the game",
+
+	"cl5.advjs.explore.afk_master.title": "AFK Master",
+	"cl5.advjs.explore.afk_master.description": "Spend 4 hours AFK (Away From Keyboard) on your island",
+
+	"cl5.advjs.agri.mechanical_spawner.title": "Mechanical Spawner",
+	"cl5.advjs.agri.mechanical_spawner.description": "Build a fully automatic mechanical spawner",
+
+	"cl5.advjs.agri.spawner_plus.title": "Mechanical Spawner+",
+	"cl5.advjs.agri.spawner_plus.description": "Build a fully automatic mechanical spawner for every mob",
+
+	"cl5.advjs.agri.fluid_farm.title": "Fluid Farm",
+	"cl5.advjs.agri.fluid_farm.description": "Build tanks with every liquid resource (e.g. lava, water, miklshakes, etc.)",
+
+	"cl5.advjs.agri.giant_tank.title": "Giant Fluid Tank",
+	"cl5.advjs.agri.giant_tank.description": "Build a fluid tank with a capacity of over 1,000,000 units",
+
+	"cl5.advjs.explore.giant_vault.title": "Giant Vault",
+	"cl5.advjs.explore.giant_vault.description": "Create a vault with a capacity of over 1,000,000 items",
+
+	"cl5.advjs.agri.villager_trade.title": "Villager Trade",
+	"cl5.advjs.agri.villager_trade.description": "Successfully trade with 10 different villagers on your island",
+
+	"cl5.advjs.agri.printed_knowledge.title": "Printed Knowledge",
+	"cl5.advjs.agri.printed_knowledge.description": "Print your first enchanted book",
+
+	"cl5.advjs.agri.enchant_library.title": "Enchantment Library",
+	"cl5.advjs.agri.enchant_library.description": "Collect all enchanted books in the game",
+
+	"cl5.advjs.challenge.xp_millionaire.title": "XP Millionaire",
+	"cl5.advjs.challenge.xp_millionaire.description": "Reach an XP level of over 500",
+
+	"cl5.advjs.challenge.wither_hunter.title": "Wither Hunter",
+	"cl5.advjs.challenge.wither_hunter.description": "Build a fully automatic Wither farm",
+
+	"cl5.advjs.challenge.dragon_dominator.title": "Dragon Dominator",
+	"cl5.advjs.challenge.dragon_dominator.description": "Defeat the Ender Dragon five times"
 }
