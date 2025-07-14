@@ -16,8 +16,8 @@ const TRIGGER_CONFIGS = {
     },
     stress_master: {
         block: 'create:stressometer',
-        nbtPath: 'Network.Capacity',
-        threshold: 5000000,
+        nbtPath: 'Network.Utilization',
+        threshold: 0.99,
         triggerName: 'minecraft:stress_master_trigger'
     },
     high_rpm: {
@@ -67,6 +67,42 @@ function getNBTValue(blockEntity, path) {
             if (nbt.contains('Capacity')) {
                 return nbt.getFloat('Capacity');
             }
+        }
+        
+        if (path === 'Network.Utilization') {
+            // Calculate utilization as Stress/Capacity
+            let stress = 0;
+            let capacity = 0;
+            
+            if (nbt.contains('Network')) {
+                let network = nbt.getCompound('Network');
+                if (network.contains('Stress')) {
+                    stress = network.getFloat('Stress');
+                }
+                if (network.contains('Capacity')) {
+                    capacity = network.getFloat('Capacity');
+                }
+            }
+            
+            // Try alternative NBT paths for stress and capacity
+            if (stress === 0 && nbt.contains('stress')) {
+                stress = nbt.getFloat('stress');
+            }
+            if (stress === 0 && nbt.contains('Stress')) {
+                stress = nbt.getFloat('Stress');
+            }
+            if (capacity === 0 && nbt.contains('capacity')) {
+                capacity = nbt.getFloat('capacity');
+            }
+            if (capacity === 0 && nbt.contains('Capacity')) {
+                capacity = nbt.getFloat('Capacity');
+            }
+            
+            // Calculate utilization percentage (0.0 to 1.0)
+            if (capacity > 0) {
+                return Math.abs(stress) / capacity;
+            }
+            return 0;
         }
         
         if (path === 'Speed') {
