@@ -763,24 +763,6 @@ AdvJSEvents.advancement((event) => {
       .requireParentDone();
   });
 
-  //Child Nearly ME System
-  stargaze.addChild("storage_system", (advBuilder) => {
-    advBuilder
-      .display((displayBuilder) => {
-        displayBuilder.setIcon("toms_storage:ts.crafting_terminal");
-        displayBuilder.setTitle({translate: 'cl5.advjs.item.crafting_terminal.title'});
-        displayBuilder.setDescription({translate: 'cl5.advjs.item.crafting_terminal.description'});
-        displayBuilder.setHidden(false);
-      })
-      .criteria((criteriaBuilder) => {
-        criteriaBuilder.add(
-          "get_c_terminal",
-          TRIGGER.hasItems("toms_storage:ts.crafting_terminal")
-        );
-      })
-      .requireParentDone();
-  });
-
   //Child Infinite Blocks!
   stargaze.addChild("infablocks", (advBuilder) => {
     advBuilder
