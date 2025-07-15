@@ -7,4 +7,5 @@ AdvJSEvents.trigger(event => {
     event.create("stress_master_trigger");         // Master stress capacity (50,000 SU)
     event.create("high_rpm_trigger");              // High RPM detection (256 RPM)
     event.create("long_conveyors_trigger");        // Long belt connector systems (100 length)
+    event.create("steam_giant_trigger");           // Steam giant boiler (3x8x18, 180 supply)
 });

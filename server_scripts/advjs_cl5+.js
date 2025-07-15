@@ -123,7 +123,13 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("challenge");
             })
-            .requireParentDone();
+            .requireParentDone()
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "steam_giant_trigger",
+                    TRIGGER.custom("minecraft:steam_giant_trigger")
+                );
+            });
     });
 
     const highStress = steamGiant.addChild("high_stress", (advBuilder) => {
@@ -568,8 +574,143 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
 
     });
+    const templateCollector = backpackEnthusiast.addChild("template_collector", (advBuilder) => {
+        advBuilder
+            .display((displayBuilder) => {
+                displayBuilder.setIcon("minecraft:netherite_upgrade_smithing_template");
+                displayBuilder.setTitle({ translate: 'cl5.advjs.explore.template_collector.title' });
+                displayBuilder.setDescription({ translate: 'cl5.advjs.explore.template_collector.description' });
+                displayBuilder.setHidden(false);
+                displayBuilder.setFrameType("task");
+            })
+            .requireParentDone()
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("upgrade_template", TRIGGER.hasItems("minecraft:netherite_upgrade_smithing_template"));
+                criteriaBuilder.add("coast_template", TRIGGER.hasItems("minecraft:coast_armor_trim_smithing_template"));
+                criteriaBuilder.add("dune_template", TRIGGER.hasItems("minecraft:dune_armor_trim_smithing_template"));
+                criteriaBuilder.add("eye_template", TRIGGER.hasItems("minecraft:eye_armor_trim_smithing_template"));
+                criteriaBuilder.add("host_template", TRIGGER.hasItems("minecraft:host_armor_trim_smithing_template"));
+                criteriaBuilder.add("raiser_template", TRIGGER.hasItems("minecraft:raiser_armor_trim_smithing_template"));
+                criteriaBuilder.add("rib_template", TRIGGER.hasItems("minecraft:rib_armor_trim_smithing_template"));
+                criteriaBuilder.add("sentry_template", TRIGGER.hasItems("minecraft:sentry_armor_trim_smithing_template"));
+                criteriaBuilder.add("shaper_template", TRIGGER.hasItems("minecraft:shaper_armor_trim_smithing_template"));
+                criteriaBuilder.add("silence_template", TRIGGER.hasItems("minecraft:silence_armor_trim_smithing_template"));
+                criteriaBuilder.add("snout_template", TRIGGER.hasItems("minecraft:snout_armor_trim_smithing_template"));
+                criteriaBuilder.add("spire_template", TRIGGER.hasItems("minecraft:spire_armor_trim_smithing_template"));
+                criteriaBuilder.add("tide_template", TRIGGER.hasItems("minecraft:tide_armor_trim_smithing_template"));
+                criteriaBuilder.add("vex_template", TRIGGER.hasItems("minecraft:vex_armor_trim_smithing_template"));
+                criteriaBuilder.add("ward_template", TRIGGER.hasItems("minecraft:ward_armor_trim_smithing_template"));
+                criteriaBuilder.add("wayfinder_template", TRIGGER.hasItems("minecraft:wayfinder_armor_trim_smithing_template"));
+                criteriaBuilder.add("wild_template", TRIGGER.hasItems("minecraft:wild_armor_trim_smithing_template"));
+            })
+    });
 
-    const backpackCollector = backpackEnthusiast.addChild("backpack_collector", (advBuilder) => {
+    const bucketCollector = templateCollector.addChild("bucket_collector", (advBuilder) => {
+        advBuilder
+            .display((displayBuilder) => {
+                displayBuilder.setIcon("minecraft:bucket");
+                displayBuilder.setTitle({ translate: 'cl5.advjs.explore.bucket_collector.title' });
+                displayBuilder.setDescription({ translate: 'cl5.advjs.explore.bucket_collector.description' });
+                displayBuilder.setHidden(false);
+                displayBuilder.setFrameType("task");
+            })
+            .requireParentDone()
+            .criteria((criteriaBuilder) => {
+                // Basic vanilla buckets
+                criteriaBuilder.add("water_bucket", TRIGGER.hasItems("minecraft:water_bucket"));
+                criteriaBuilder.add("lava_bucket", TRIGGER.hasItems("minecraft:lava_bucket"));
+                criteriaBuilder.add("milk_bucket", TRIGGER.hasItems("minecraft:milk_bucket"));
+                criteriaBuilder.add("powder_snow_bucket", TRIGGER.hasItems("minecraft:powder_snow_bucket"));
+
+                // Create mod buckets
+                criteriaBuilder.add("chocolate_bucket", TRIGGER.hasItems("create:chocolate_bucket"));
+                criteriaBuilder.add("honey_bucket", TRIGGER.hasItems("create:honey_bucket"));
+
+                // Create Enchantment Industry
+                criteriaBuilder.add("ink_bucket", TRIGGER.hasItems("create_enchantment_industry:ink_bucket"));
+
+                // Create Mechanical Spawner fluids
+                criteriaBuilder.add("spawn_fluid_zombie_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_zombie_bucket"));
+                criteriaBuilder.add("spawn_fluid_spider_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_spider_bucket"));
+                criteriaBuilder.add("spawn_fluid_slime_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_slime_bucket"));
+                criteriaBuilder.add("spawn_fluid_skeleton_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_skeleton_bucket"));
+                criteriaBuilder.add("spawn_fluid_magma_cube_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_magma_cube_bucket"));
+                criteriaBuilder.add("spawn_fluid_enderman_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_enderman_bucket"));
+                criteriaBuilder.add("spawn_fluid_creeper_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_creeper_bucket"));
+                criteriaBuilder.add("spawn_fluid_blaze_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_blaze_bucket"));
+                criteriaBuilder.add("spawn_fluid_random_bucket", TRIGGER.hasItems("create_mechanical_spawner:spawn_fluid_random_bucket"));
+
+                // Create Central Kitchen
+                criteriaBuilder.add("tomato_sauce_bucket", TRIGGER.hasItems("create_central_kitchen:tomato_sauce_bucket"));
+
+                // Slice and Dice
+                criteriaBuilder.add("fertilizer_bucket", TRIGGER.hasItems("sliceanddice:fertilizer_bucket"));
+
+                // Vintage Improvements
+                criteriaBuilder.add("sulfuric_acid_bucket", TRIGGER.hasItems("vintageimprovements:sulfuric_acid_bucket"));
+
+                // Create BIC BIT
+                criteriaBuilder.add("frying_oil_bucket", TRIGGER.hasItems("create_bic_bit:frying_oil_bucket"));
+                criteriaBuilder.add("mayonnaise_bucket", TRIGGER.hasItems("create_bic_bit:mayonnaise_bucket"));
+                criteriaBuilder.add("ketchup_bucket", TRIGGER.hasItems("create_bic_bit:ketchup_bucket"));
+                criteriaBuilder.add("curdled_milk_bucket", TRIGGER.hasItems("create_bic_bit:curdled_milk_bucket"));
+
+                // KubeJS custom fluids
+                criteriaBuilder.add("boss_fluid_bucket", TRIGGER.hasItems("kubejs:boss_fluid_bucket"));
+                criteriaBuilder.add("bloodmoonshine_fluid_bucket", TRIGGER.hasItems("kubejs:bloodmoonshine_fluid_bucket"));
+                criteriaBuilder.add("redstone_fluid_bucket", TRIGGER.hasItems("kubejs:redstone_fluid_bucket"));
+                criteriaBuilder.add("molten_iron_bucket", TRIGGER.hasItems("kubejs:molten_iron_bucket"));
+                criteriaBuilder.add("spawn_fluid_phantom_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_phantom_bucket"));
+                criteriaBuilder.add("spawn_fluid_frog_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_frog_bucket"));
+                criteriaBuilder.add("spawn_fluid_cat_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_cat_bucket"));
+                criteriaBuilder.add("spawn_fluid_wolf_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_wolf_bucket"));
+                criteriaBuilder.add("spawn_fluid_fox_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_fox_bucket"));
+                criteriaBuilder.add("spawn_fluid_guardian_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_guardian_bucket"));
+                criteriaBuilder.add("spawn_fluid_dolphin_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_dolphin_bucket"));
+                criteriaBuilder.add("spawn_fluid_allay_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_allay_bucket"));
+                criteriaBuilder.add("spawn_fluid_wither_skeleton_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_wither_skeleton_bucket"));
+                criteriaBuilder.add("spawn_fluid_warden_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_warden_bucket"));
+                criteriaBuilder.add("spawn_fluid_squid_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_squid_bucket"));
+                criteriaBuilder.add("spawn_fluid_ghast_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_ghast_bucket"));
+                criteriaBuilder.add("spawn_fluid_chicken_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_chicken_bucket"));
+                criteriaBuilder.add("spawn_fluid_cow_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_cow_bucket"));
+                criteriaBuilder.add("spawn_fluid_pig_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_pig_bucket"));
+                criteriaBuilder.add("spawn_fluid_sheep_bucket", TRIGGER.hasItems("kubejs:spawn_fluid_sheep_bucket"));
+                criteriaBuilder.add("kubejs_powder_snow_bucket", TRIGGER.hasItems("kubejs:powder_snow_bucket"));
+
+                // Create Big Cannons
+                criteriaBuilder.add("molten_nethersteel_bucket", TRIGGER.hasItems("createbigcannons:molten_nethersteel_bucket"));
+                criteriaBuilder.add("molten_steel_bucket", TRIGGER.hasItems("createbigcannons:molten_steel_bucket"));
+                criteriaBuilder.add("molten_bronze_bucket", TRIGGER.hasItems("createbigcannons:molten_bronze_bucket"));
+                criteriaBuilder.add("molten_cast_iron_bucket", TRIGGER.hasItems("createbigcannons:molten_cast_iron_bucket"));
+
+                // Vegan Delight
+                criteriaBuilder.add("applesauce_bucket", TRIGGER.hasItems("vegandelight:applesauce_bucket"));
+                criteriaBuilder.add("soymilk_bucket", TRIGGER.hasItems("vegandelight:soymilk_bucket"));
+
+                // Create Dreams & Desires
+                criteriaBuilder.add("shimmer_bucket", TRIGGER.hasItems("create_dd:shimmer_bucket"));
+                criteriaBuilder.add("sap_bucket", TRIGGER.hasItems("create_dd:sap_bucket"));
+                criteriaBuilder.add("chromatic_waste_bucket", TRIGGER.hasItems("create_dd:chromatic_waste_bucket"));
+                criteriaBuilder.add("chocolate_milkshake_bucket", TRIGGER.hasItems("create_dd:chocolate_milkshake_bucket"));
+                criteriaBuilder.add("hot_chocolate_bucket", TRIGGER.hasItems("create_dd:hot_chocolate_bucket"));
+                criteriaBuilder.add("caramel_milkshake_bucket", TRIGGER.hasItems("create_dd:caramel_milkshake_bucket"));
+                criteriaBuilder.add("caramel_bucket", TRIGGER.hasItems("create_dd:caramel_bucket"));
+                criteriaBuilder.add("glowberry_milkshake_bucket", TRIGGER.hasItems("create_dd:glowberry_milkshake_bucket"));
+                criteriaBuilder.add("glowberry_bucket", TRIGGER.hasItems("create_dd:glowberry_bucket"));
+                criteriaBuilder.add("strawberry_milkshake_bucket", TRIGGER.hasItems("create_dd:strawberry_milkshake_bucket"));
+                criteriaBuilder.add("strawberry_bucket", TRIGGER.hasItems("create_dd:strawberry_bucket"));
+                criteriaBuilder.add("vanilla_milkshake_bucket", TRIGGER.hasItems("create_dd:vanilla_milkshake_bucket"));
+                criteriaBuilder.add("vanilla_bucket", TRIGGER.hasItems("create_dd:vanilla_bucket"));
+                criteriaBuilder.add("cream_bucket", TRIGGER.hasItems("create_dd:cream_bucket"));
+                criteriaBuilder.add("condense_milk_bucket", TRIGGER.hasItems("create_dd:condense_milk_bucket"));
+
+                // Create Things and Misc
+                criteriaBuilder.add("slime_bucket", TRIGGER.hasItems("create_things_and_misc:slime_bucket"));
+            });
+    });
+
+    const backpackCollector = templateCollector.addChild("backpack_collector", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
                 displayBuilder.setIcon("travelersbackpack:standard");
@@ -625,52 +766,6 @@ AdvJSEvents.advancement((event) => {
                 criteriaBuilder.add("fox_backpack", TRIGGER.hasItems("travelersbackpack:fox"));
                 criteriaBuilder.add("horse_backpack", TRIGGER.hasItems("travelersbackpack:horse"));
 
-            })
-    });
-
-    // TODO: bucket_collector - Collect various fluid buckets
-    // Implementation: Add criteria to detect multiple bucket types
-    // Suggested: TRIGGER.hasItems with array of filled buckets
-    const bucketCollector = backpackCollector.addChild("bucket_collector", (advBuilder) => {
-        advBuilder
-            .display((displayBuilder) => {
-                displayBuilder.setIcon("minecraft:bucket");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.explore.bucket_collector.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.explore.bucket_collector.description' });
-                displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
-            })
-            .requireParentDone();
-    });
-
-    const templateCollector = bucketCollector.addChild("template_collector", (advBuilder) => {
-        advBuilder
-            .display((displayBuilder) => {
-                displayBuilder.setIcon("minecraft:netherite_upgrade_smithing_template");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.explore.template_collector.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.explore.template_collector.description' });
-                displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
-            })
-            .requireParentDone()
-            .criteria((criteriaBuilder) => {
-                criteriaBuilder.add("upgrade_template", TRIGGER.hasItems("minecraft:netherite_upgrade_smithing_template"));
-                criteriaBuilder.add("coast_template", TRIGGER.hasItems("minecraft:coast_armor_trim_smithing_template"));
-                criteriaBuilder.add("dune_template", TRIGGER.hasItems("minecraft:dune_armor_trim_smithing_template"));
-                criteriaBuilder.add("eye_template", TRIGGER.hasItems("minecraft:eye_armor_trim_smithing_template"));
-                criteriaBuilder.add("host_template", TRIGGER.hasItems("minecraft:host_armor_trim_smithing_template"));
-                criteriaBuilder.add("raiser_template", TRIGGER.hasItems("minecraft:raiser_armor_trim_smithing_template"));
-                criteriaBuilder.add("rib_template", TRIGGER.hasItems("minecraft:rib_armor_trim_smithing_template"));
-                criteriaBuilder.add("sentry_template", TRIGGER.hasItems("minecraft:sentry_armor_trim_smithing_template"));
-                criteriaBuilder.add("shaper_template", TRIGGER.hasItems("minecraft:shaper_armor_trim_smithing_template"));
-                criteriaBuilder.add("silence_template", TRIGGER.hasItems("minecraft:silence_armor_trim_smithing_template"));
-                criteriaBuilder.add("snout_template", TRIGGER.hasItems("minecraft:snout_armor_trim_smithing_template"));
-                criteriaBuilder.add("spire_template", TRIGGER.hasItems("minecraft:spire_armor_trim_smithing_template"));
-                criteriaBuilder.add("tide_template", TRIGGER.hasItems("minecraft:tide_armor_trim_smithing_template"));
-                criteriaBuilder.add("vex_template", TRIGGER.hasItems("minecraft:vex_armor_trim_smithing_template"));
-                criteriaBuilder.add("ward_template", TRIGGER.hasItems("minecraft:ward_armor_trim_smithing_template"));
-                criteriaBuilder.add("wayfinder_template", TRIGGER.hasItems("minecraft:wayfinder_armor_trim_smithing_template"));
-                criteriaBuilder.add("wild_template", TRIGGER.hasItems("minecraft:wild_armor_trim_smithing_template"));
             })
     });
 

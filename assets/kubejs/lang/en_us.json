@@ -240,7 +240,7 @@
 	"cl5.advjs.stress.stress_basics.description": "Achieve a stress level of over 100,000 SU",
 
 	"cl5.advjs.tech.steam_giant.title": "Steam Giant",
-	"cl5.advjs.tech.steam_giant.description": "Build a 10x10x10 steam engine providing maximum power",
+	"cl5.advjs.tech.steam_giant.description": "Build a Level 18 steam engine providing maximum power",
 
 	"cl5.advjs.tech.high_stress.title": "High Stress",
 	"cl5.advjs.tech.high_stress.description": "Achieve a stress level of over 1,000,000 SU",
@@ -267,7 +267,7 @@
 	"cl5.advjs.tech.wireless_terminal.description": "Craft a Wireless Terminal",
 
 	"cl5.advjs.tech.wireless_connected.title": "Wirelessly Connected",
-	"cl5.advjs.tech.wireless_connected.description": "Use your terminal from 100 blocks away",
+	"cl5.advjs.tech.wireless_connected.description": "Use your terminal from at least 120 blocks away",
 
 	"cl5.advjs.tech.cross_dimensional.title": "Cross-Dimensional",
 	"cl5.advjs.tech.cross_dimensional.description": "Use your terminal from another dimension",
@@ -303,7 +303,7 @@
 	"cl5.advjs.challenge.bad_luck.description": "Experience 3 mechanisms failing in a row when crafting them",
 
 	"cl5.advjs.tech.stress_master.title": "Stress Master",
-	"cl5.advjs.tech.stress_master.description": "Keep your stress capacity at over 99% utilization for 10 minutes",
+	"cl5.advjs.tech.stress_master.description": "Keep your stress capacity at over 99% utilization",
 
 	"cl5.advjs.challenge.island_hopping.title": "Island Hopping",
 	"cl5.advjs.challenge.island_hopping.description": "Spend a cumulative time of 24 hours on islands other than your starting island",
