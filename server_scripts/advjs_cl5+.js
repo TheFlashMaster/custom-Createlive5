@@ -75,8 +75,6 @@ AdvJSEvents.advancement((event) => {
     // MAIN TECHNOLOGY BRANCH - Power & Automation Pipeline
     // ============================================================================
 
-    // high_rpm - Monitor rotational speed by right-clicking speedometer
-    // Implementation: Detect when player right-clicks on a speedometer block
     const highRpm = cl5extra.addChild("high_rpm", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -95,9 +93,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: stress_basics - Monitor stress unit capacity
-    // Implementation: Already has custom trigger "minecraft:stress_unit_trigger"
-    // May need to register this custom trigger in custom_advancement_triggers.js
     const stressBasic = highRpm.addChild("stress_basics", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -131,9 +126,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: high_stress - Achieve high stress unit capacity
-    // Implementation: Add criteria to detect when stress capacity exceeds threshold
-    // Suggested: Custom trigger for stress measurement above certain value
     const highStress = steamGiant.addChild("high_stress", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -203,20 +195,8 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-    //TODO : Implement  
-    const massiveMachinery = cl5extra.addChild("massive_machinery", (advBuilder) => {
-        advBuilder
-            .display((displayBuilder) => {
-                displayBuilder.setIcon("create:belt_connector");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.tech.massive_machinery.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.tech.massive_machinery.description' });
-                displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
-            })
-            .requireParentDone();
-    });
 
-    const longConveyors = massiveMachinery.addChild("long_conveyors", (advBuilder) => {
+    const longConveyors = cl5extra.addChild("long_conveyors", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
                 displayBuilder.setIcon("create:belt_connector");
@@ -234,7 +214,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    //Child Nearly ME System
     const terminalMaster = cl5extra.addChild("storage_system", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -460,9 +439,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: stress_master - Achieve ultimate stress management
-    // Implementation: Add criteria to detect extremely high stress capacity
-    // Suggested: Custom trigger for stress units above maximum threshold
     const stressMaster = stressBasic.addChild("stress_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
