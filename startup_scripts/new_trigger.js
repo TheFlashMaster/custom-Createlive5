@@ -10,4 +10,5 @@ AdvJSEvents.trigger(event => {
     event.create("steam_giant_trigger");           // Steam giant boiler (3x8x18, 180 supply)
     event.create("giant_vault_trigger");           // Giant vault (3x9)
     event.create("giant_tank_trigger");            // Giant fluid tank (3x32)
+    event.create("printed_knowledge_trigger");     // Printed knowledge (depot with items)
 });

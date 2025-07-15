@@ -58,14 +58,40 @@
                 return size >= 3 && height >= 32;
             },
             triggerName: 'minecraft:giant_tank_trigger'
+        },
+        printedKnowledge: {
+            block: 'create:depot',
+            nbtPath: 'OutputBuffer.Items',
+            condition: (items) => {
+                // Check if any item in the output buffer is an enchanted book
+                if (!items || items.size() === 0) {
+                    return false;
+                }
+                // Iterate through items to find enchanted books
+                for (let i = 0; i < items.size(); i++) {
+                    let item = items.getCompound(i);
+                    if (item.contains('id')) {
+                        let itemId = item.getString('id');
+                        console.log(`[CustomTrigger] Checking item: ${itemId}`);
+                        // Check if it's an enchanted book
+                        if (itemId === 'minecraft:enchanted_book') {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+
+
+            },
+            triggerName: 'minecraft:printed_knowledge_trigger',
         }
     };
 
 
     // Helper function to safely get nested NBT values
-    // Helper function to safely get nested NBT values
     const getNBTValue = function (blockEntity, path, player) {
         if (!blockEntity) {
+            player.tell(`[CustomTrigger] No blockEntity provided`);
             return 0;
         }
 
@@ -77,28 +103,116 @@
             }
 
             if (!nbt) {
+                player.tell(`[CustomTrigger] No NBT data available for ${blockEntity.id}`);
                 return 0;
             }
 
             let value = nbt;
-            player.tell(`[CustomTrigger] NBT data for ${blockEntity.id}: ${value}`);
+            player.tell(`[CustomTrigger] Starting NBT traversal for path: ${path}`);
+            player.tell(`[CustomTrigger] Root NBT keys: ${Object.keys(nbt).join(', ')}`);
+
             // Traverse the NBT structure based on the path
             let pathParts = path.split('.');
-            pathParts.pop(); // Remove the last element
-            for (const part of pathParts) {
+            let finalKey = pathParts.pop(); // Remove and store the last element
+
+            // Navigate through the path
+            for (let i = 0; i < pathParts.length; i++) {
+                let part = pathParts[i];
+                player.tell(`[CustomTrigger] Looking for part: ${part} in current NBT level`);
+
                 if (value.contains(part)) {
                     value = value.getCompound(part);
-                    player.tell(`[CustomTrigger] Navigated to ${part}: ${value}`);
+                    player.tell(`[CustomTrigger] Successfully navigated to ${part}`);
+                    player.tell(`[CustomTrigger] Keys at ${part}: ${Object.keys(value).join(', ')}`);
                 } else {
+                    player.tell(`[CustomTrigger] Path part '${part}' not found. Available keys: ${Object.keys(value).join(', ')}`);
                     return 0; // Path not found
                 }
             }
-            value = value.getFloat(path.split('.')[path.split('.').length - 1]);
-            player.tell(`[CustomTrigger] Final value for ${path}: ${value}`);
-            return value;
+
+            // Now try to get the final value
+            player.tell(`[CustomTrigger] Looking for final key: ${finalKey}`);
+
+            if (!value.contains(finalKey)) {
+                player.tell(`[CustomTrigger] Final key '${finalKey}' not found. Available keys: ${Object.keys(value).join(', ')}`);
+                return 0;
+            }
+
+            // Get the NBT tag type to determine how to read it
+            let tag = value.get(finalKey);
+            player.tell(`[CustomTrigger] Found tag for ${finalKey}: ${tag} (type: ${tag.getClass().getSimpleName()})`);
+
+            let finalValue;
+
+            // Check the actual NBT tag type and handle accordingly
+            let tagType = tag.getId();
+            player.tell(`[CustomTrigger] NBT tag ID: ${tagType}`);
+
+            switch (tagType) {
+                case 1: // ByteTag
+                    finalValue = value.getByte(finalKey);
+                    player.tell(`[CustomTrigger] Got byte value: ${finalValue}`);
+                    break;
+                case 2: // ShortTag
+                    finalValue = value.getShort(finalKey);
+                    player.tell(`[CustomTrigger] Got short value: ${finalValue}`);
+                    break;
+                case 3: // IntTag
+                    finalValue = value.getInt(finalKey);
+                    player.tell(`[CustomTrigger] Got int value: ${finalValue}`);
+                    break;
+                case 4: // LongTag
+                    finalValue = value.getLong(finalKey);
+                    player.tell(`[CustomTrigger] Got long value: ${finalValue}`);
+                    break;
+                case 5: // FloatTag
+                    finalValue = value.getFloat(finalKey);
+                    player.tell(`[CustomTrigger] Got float value: ${finalValue}`);
+                    break;
+                case 6: // DoubleTag
+                    finalValue = value.getDouble(finalKey);
+                    player.tell(`[CustomTrigger] Got double value: ${finalValue}`);
+                    break;
+                case 8: // StringTag
+                    let stringValue = value.getString(finalKey);
+                    finalValue = parseFloat(stringValue);
+                    if (isNaN(finalValue)) {
+                        finalValue = stringValue; // Keep as string if not a number
+                    }
+                    player.tell(`[CustomTrigger] Got string value: ${stringValue} -> ${finalValue}`);
+                    break;
+                case 9: // ListTag
+                    let listValue = value.getList(finalKey, 10); // Try compound list first
+                    if (listValue.isEmpty()) {
+                        // Try other list types
+                        for (let type = 0; type <= 12; type++) {
+                            listValue = value.getList(finalKey, type);
+                            if (!listValue.isEmpty()) {
+                                break;
+                            }
+                        }
+                    }
+                    finalValue = listValue;
+                    player.tell(`[CustomTrigger] Got list value with ${finalValue} items`);
+                    break;
+                case 10: // CompoundTag
+                    let compound = value.getCompound(finalKey);
+                    finalValue = Object.keys(compound); // Return number of keys
+                    player.tell(`[CustomTrigger] Got compound with ${finalValue} keys`);
+                    break;
+                default:
+                    player.tell(`[CustomTrigger] Unknown NBT tag type: ${tagType}, trying generic approach`);
+                    // Fall back to string representation
+                    finalValue = tag.toString();
+                    break;
+            }
+
+            player.tell(`[CustomTrigger] Final value for ${path}: ${finalValue} (type: ${typeof finalValue})`);
+            return finalValue;
+
         } catch (error) {
-            // Error will be reported in checkAndTriggerAdvancement
             player.tell(`[CustomTrigger] Error getting NBT value for ${blockEntity.id} at path ${path}: ${error}`);
+            player.tell(`[CustomTrigger] Error stack: ${error.stack}`);
         }
 
         return 0;
@@ -107,9 +221,9 @@
     const checkAndTriggerAdvancement = function (event, config) {
         let targetEntity = event.block.entity;
         let { nbt } = targetEntity;
-            if (!nbt) {
-                nbt = targetEntity.getUpdateTag();
-            }
+        if (!nbt) {
+            nbt = targetEntity.getUpdateTag();
+        }
         event.player.tell(`[CustomTrigger] Checking block: ${config.block} with NBT: ${(nbt)}`);
         // Special case: if block has Controller NBT, use controller block instead
         if (targetEntity && nbt && nbt.contains('Controller')) {

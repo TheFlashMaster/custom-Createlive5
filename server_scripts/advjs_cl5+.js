@@ -807,7 +807,6 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: villager_trade
     const villagerTrade = cl5extra.addChild("villager_trade", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -817,10 +816,141 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
             })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("trade_armorer", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:armorer\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_butcher", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:butcher\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_cartographer", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:cartographer\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_cleric", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:cleric\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_farmer", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:farmer\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_fisherman", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:fisherman\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_fletcher", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:fletcher\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_leatherworker", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:leatherworker\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_librarian", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:librarian\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_mason", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:mason\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_shepherd", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:shepherd\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_toolsmith", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:toolsmith\"}}");
+                            }
+                        )
+                    )
+                );
+                criteriaBuilder.add("trade_weaponsmith", 
+                    TRIGGER.villagerTrade(triggerBuilder => 
+                        triggerBuilder.setVillager(
+                            villagerBuilder => {
+                                villagerBuilder.of("minecraft:villager");
+                                villagerBuilder.setNbt("{VillagerData:{profession:\"minecraft:weaponsmith\"}}");
+                            }
+                        )
+                    )
+                );
+            })
             .requireParentDone();
     });
 
-    // TODO: printed_knowledge
     const printedKnowledge = villagerTrade.addChild("printed_knowledge", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -829,6 +959,9 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.agri.printed_knowledge.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("printed_knowledge", TRIGGER.custom("minecraft:printed_knowledge_trigger"));
             })
             .requireParentDone();
     });
@@ -845,7 +978,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    const xpMillionaire = enchantLibrary.addChild("xp_millionaire", (advBuilder) => {
+    const xpMillionaire = printedKnowledge.addChild("xp_millionaire", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
                 displayBuilder.setIcon("minecraft:experience_bottle");
