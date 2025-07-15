@@ -8,4 +8,6 @@ AdvJSEvents.trigger(event => {
     event.create("high_rpm_trigger");              // High RPM detection (256 RPM)
     event.create("long_conveyors_trigger");        // Long belt connector systems (100 length)
     event.create("steam_giant_trigger");           // Steam giant boiler (3x8x18, 180 supply)
+    event.create("giant_vault_trigger");           // Giant vault (3x9)
+    event.create("giant_tank_trigger");            // Giant fluid tank (3x32)
 });

@@ -110,10 +110,6 @@ AdvJSEvents.advancement((event) => {
             })
     });
 
-    // TODO: steam_giant - Build large steam engine setup
-    // Implementation: Add criteria to detect steam engines with high capacity
-    // Suggested: TRIGGER.hasItems(["create:steam_engine"]) + stress capacity check
-    // Branch 1A: Steam Power Chain
     const steamGiant = stressBasic.addChild("steam_giant", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -150,10 +146,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: machine_park - Build variety of Create machines
-    // Implementation: Add criteria to detect multiple different Create machines
-    // Suggested: TRIGGER.hasItems with array of mechanical machines
-    // Branch 1B: Automation & Manufacturing Chain
+    // TODO: machine_park
     const machinePark = stressBasic.addChild("machine_park", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -187,9 +180,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: auto_mechanisms - Automate precision mechanism production
-    // Implementation: Add criteria to detect automated precision mechanism crafting
-    // Suggested: Custom trigger for automated production or sequence assembly
+    // TODO: auto_mechanisms
     const autoMechanisms = mechanismMaster.addChild("auto_mechanisms", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -201,7 +192,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    //! Fix length implementation/translation
     const longConveyors = cl5extra.addChild("long_conveyors", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -253,10 +244,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-
-    // TODO: wireless_connected - Establish wireless connections
-    // Implementation: Add criteria to detect wireless connector usage
-    // Suggested: TRIGGER.hasItems(["create:wireless_connector"]) or custom connection trigger
+    //TODO: wireless_connected
     const wirelessConnected = wirelessTerminal.addChild("wireless_connected", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -269,9 +257,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: cross_dimensional - Connect across dimensions
-    // Implementation: Add criteria to detect cross-dimensional connections
-    // Suggested: Custom trigger for dimensional travel or ender eye usage
+    // TODO: cross_dimensional
     const crossDimensional = wirelessConnected.addChild("cross_dimensional", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -284,10 +270,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: long_train_ride - Build and operate trains
-    // Implementation: Add criteria to detect train travel distance
-    // Suggested: Custom trigger for train distance traveled or track length
-    // Branch 2B: Transportation Chain
+    // TODO: long_train_ride
     const longTrainRide = longConveyors.addChild("long_train_ride", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -300,9 +283,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: reverse_gear - Master train controls
-    // Implementation: Add criteria to detect advanced train maneuvering
-    // Suggested: Custom trigger for reversing trains or complex scheduling
+    // TODO: reverse_gear
     const reverseGear = longTrainRide.addChild("reverse_gear", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -367,9 +348,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: flamethrower_expert - Use flamethrower effectively
-    // Implementation: Add criteria to detect flamethrower usage or entity kills
-    // Suggested: TRIGGER.hasItems(["create_sa:flamethrower"]) + kill count trigger
+    // TODO: flamethrower_expert
     const flamethrowerExpert = exoskeleton.addChild("flamethrower_expert", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -398,10 +377,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: chunk_loaded - Set up chunk loading
-    // Implementation: Add criteria to detect chunk loader placement
-    // Suggested: TRIGGER.hasItems(["chunkloaders:chunk_loader"]) or placement trigger
-    // Branch 3B: Infrastructure Management Chain
+    // TODO: chunk_loaded
     const chunkLoaded = terminalMaster.addChild("chunk_loaded", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -414,9 +390,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: chunk_master - Master chunk loading systems
-    // Implementation: Add criteria to detect multiple chunk loaders or large loaded areas
-    // Suggested: Custom trigger for chunk loader count or loaded chunk area
+    // TODO: chunk_master
     const chunkMaster = chunkLoaded.addChild("chunk_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -429,10 +403,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: bad_luck - Overcome difficult challenges
-    // Implementation: Add criteria to detect specific challenging situations
-    // Suggested: Custom trigger for deaths, failures, or specific events
-    // Challenge Branch: Difficulty spikes
+    // TODO: bad_luck
     const badLuck = mechanismMaster.addChild("bad_luck", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -467,10 +438,7 @@ AdvJSEvents.advancement((event) => {
     // EXPLORATION & WORLD DEVELOPMENT BRANCH
     // ============================================================================
 
-    // TODO: island_hopping - Explore multiple locations
-    // Implementation: Add criteria to detect travel distance or biome visits
-    // Suggested: Custom trigger for distance traveled or dimension visits
-    // Entry: Basic exploration and mobility
+    // TODO: island_hopping
     const islandHopping = cl5extra.addChild("island_hopping", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -483,9 +451,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: caves_cliffs - Explore vertical terrain
-    // Implementation: Add criteria to detect mining or elevation changes
-    // Suggested: TRIGGER.hasItems(["create:mechanical_piston"]) + position/mining triggers
+    // TODO: caves_cliffs
     const cavesCliffs = islandHopping.addChild("caves_cliffs", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -521,10 +487,7 @@ AdvJSEvents.advancement((event) => {
 
     });
 
-    // TODO: area_expansion - Expand base or territory
-    // Implementation: Add criteria to detect large building projects or area claims
-    // Suggested: Custom trigger for placed blocks count or area coverage
-    // Branch 4A: Territory & Construction
+    // TODO: area_expansion
     const areaExpansion = cavesCliffs.addChild("area_expansion", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -537,9 +500,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: blueprint_master - Master Create schematic system
-    // Implementation: Add criteria to detect schematic usage and large builds
-    // Suggested: TRIGGER.hasItems(["create:schematic"]) + schematic usage trigger
+    // TODO: blueprint_master
     const blueprintMaster = areaExpansion.addChild("blueprint_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -769,10 +730,7 @@ AdvJSEvents.advancement((event) => {
             })
     });
 
-    // TODO: afk_master - Master AFK automation
-    // Implementation: Add criteria to detect long idle times with production
-    // Suggested: Custom trigger for time-based automation or idle production
-    // Convergence: Long-term exploration projects (requires equipment from tech tree)
+    // TODO: afk_master
     const afkMaster = islandHopping.addChild("afk_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -789,10 +747,7 @@ AdvJSEvents.advancement((event) => {
     // AGRICULTURE & RESOURCE PRODUCTION BRANCH
     // ============================================================================
 
-    // TODO: mechanical_spawner - Build mob farming systems
-    // Implementation: Add criteria to detect mechanical spawner usage
-    // Suggested: TRIGGER.hasItems(["create:mechanical_spawner"]) or mob kill count trigger
-    // Entry: Automated resource generation
+    // TODO: mechanical_spawner
     const mechanicalSpawner = cl5extra.addChild("mechanical_spawner", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -805,9 +760,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: spawner_plus - Advanced spawner configurations
-    // Implementation: Add criteria to detect multiple spawners or high spawn rates
-    // Suggested: Custom trigger for spawner count or mob generation rate
+    // TODO: spawner_plus
     const spawnerPlus = mechanicalSpawner.addChild("spawner_plus", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -820,41 +773,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: fluid_farm - Set up fluid production systems
-    // Implementation: Add criteria to detect fluid tanks and fluid generation
-    // Suggested: TRIGGER.hasItems(["create:fluid_tank"]) + fluid amount trigger
-    // Branch 5A: Fluid & Storage Systems
-    const fluidFarm = mechanicalSpawner.addChild("fluid_farm", (advBuilder) => {
-        advBuilder
-            .display((displayBuilder) => {
-                displayBuilder.setIcon("create:fluid_tank");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.agri.fluid_farm.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.agri.fluid_farm.description' });
-                displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
-            })
-            .requireParentDone();
-    });
-
-    // TODO: giant_tank - Build massive fluid storage
-    // Implementation: Add criteria to detect large fluid tank structures
-    // Suggested: Custom trigger for fluid tank multiblock size or capacity
-    const giantTank = fluidFarm.addChild("giant_tank", (advBuilder) => {
-        advBuilder
-            .display((displayBuilder) => {
-                displayBuilder.setIcon("create:fluid_tank");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.agri.giant_tank.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.agri.giant_tank.description' });
-                displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("challenge");
-            })
-            .requireParentDone();
-    });
-
-    // TODO: giant_vault - Build massive item storage
-    // Implementation: Add criteria to detect large item vault structures
-    // Suggested: Custom trigger for item vault multiblock size or capacity
-    const giantVault = giantTank.addChild("giant_vault", (advBuilder) => {
+    const giantVault = cl5extra.addChild("giant_vault", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
                 displayBuilder.setIcon("create:item_vault");
@@ -863,13 +782,32 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
             })
-            .requireParentDone();
+            .requireParentDone()
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "giant_vault", TRIGGER.custom("minecraft:giant_vault_trigger")
+                );
+            });
     });
 
-    // TODO: villager_trade - Establish villager trading systems
-    // Implementation: Add criteria to detect emerald accumulation or villager trading
-    // Suggested: TRIGGER.hasItems(["minecraft:emerald"]) with quantity threshold + trading trigger
-    // Branch 5B: Trading & Knowledge Systems
+    const giantTank = giantVault.addChild("giant_tank", (advBuilder) => {
+        advBuilder
+            .display((displayBuilder) => {
+                displayBuilder.setIcon("create:fluid_tank");
+                displayBuilder.setTitle({ translate: 'cl5.advjs.agri.giant_tank.title' });
+                displayBuilder.setDescription({ translate: 'cl5.advjs.agri.giant_tank.description' });
+                displayBuilder.setHidden(false);
+                displayBuilder.setFrameType("challenge");
+            })
+            .requireParentDone()
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "giant_tank",TRIGGER.custom("minecraft:giant_tank_trigger")
+                );
+            });
+    });
+
+    // TODO: villager_trade
     const villagerTrade = cl5extra.addChild("villager_trade", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -882,9 +820,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: printed_knowledge - Collect books and knowledge
-    // Implementation: Add criteria to detect book collection or library building
-    // Suggested: TRIGGER.hasItems(["minecraft:book"]) with quantity or enchanted book trigger
+    // TODO: printed_knowledge
     const printedKnowledge = villagerTrade.addChild("printed_knowledge", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -934,10 +870,7 @@ AdvJSEvents.advancement((event) => {
     // ULTIMATE CHALLENGE BRANCH - Boss & Endgame Content
     // ============================================================================
 
-    // TODO: wither_hunter - Defeat wither bosses
-    // Implementation: Add criteria to detect wither kills or wither skulls
-    // Suggested: TRIGGER.entityKilled("minecraft:wither") or TRIGGER.hasItems(["minecraft:wither_skeleton_skull"])
-    // Entry: Combat preparation (requires personal equipment from tech branch)
+    // TODO: wither_hunter
     const witherHunter = mechanicalSpawner.addChild("wither_hunter", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -950,10 +883,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: dragon_dominator - Defeat the Ender Dragon
-    // Implementation: Add criteria to detect ender dragon kill or dragon egg
-    // Suggested: TRIGGER.entityKilled("minecraft:ender_dragon") or TRIGGER.hasItems(["minecraft:dragon_egg"])
-    // Final Boss Challenge (requires infrastructure, exploration, and combat preparation)
+    // TODO: dragon_dominator
     const dragonDominator = witherHunter.addChild("dragon_dominator", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {

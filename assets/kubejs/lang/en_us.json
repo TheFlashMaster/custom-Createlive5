@@ -345,10 +345,10 @@
 	"cl5.advjs.agri.fluid_farm.description": "Build tanks with every liquid resource (e.g. lava, water, miklshakes, etc.)",
 
 	"cl5.advjs.agri.giant_tank.title": "Giant Fluid Tank",
-	"cl5.advjs.agri.giant_tank.description": "Build a fluid tank with a capacity of over 1,000,000 units",
+	"cl5.advjs.agri.giant_tank.description": "Build a fluid tank with with a size of 3x32 blocks",
 
 	"cl5.advjs.explore.giant_vault.title": "Giant Vault",
-	"cl5.advjs.explore.giant_vault.description": "Create a vault with a capacity of over 1,000,000 items",
+	"cl5.advjs.explore.giant_vault.description": "Create a vault with a size of 3x9 blocks",
 
 	"cl5.advjs.agri.villager_trade.title": "Villager Trade",
 	"cl5.advjs.agri.villager_trade.description": "Successfully trade with 10 different villagers on your island",

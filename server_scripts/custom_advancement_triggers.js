@@ -40,6 +40,24 @@
                 return size >= 3 && height >= 8 && activeHeat >= 18 && supply >= 180;
             },
             triggerName: 'minecraft:steam_giant_trigger'
+        },
+        giant_vault: {
+            block: 'create:item_vault',
+            nbtPaths: ['Size', 'Length'],
+            condition: (size, length) => {
+                // Check if the vault is large enough
+                return size >= 3 && length >= 9;
+            },
+            triggerName: 'minecraft:giant_vault_trigger'
+        },
+        giant_tank: {
+            block: 'create:fluid_tank',
+            nbtPaths: ['Size', 'Height'],
+            condition: (size, height) => {
+                // Check if the tank is large enough
+                return size >= 3 && height >= 32;
+            },
+            triggerName: 'minecraft:giant_tank_trigger'
         }
     };
 
