@@ -103,6 +103,15 @@
             },
             triggerName: 'minecraft:chunk_loader_trigger'
         },
+        machinePark: {
+            block: 'create:stressometer',
+            nbtPath: 'Network.Size',
+            condition: (size) => {
+                // Check if the network size is greater than or equal to 1000
+                return size >= 1000;
+            },
+            triggerName: 'minecraft:machine_park_trigger'
+        },
     };
 
 

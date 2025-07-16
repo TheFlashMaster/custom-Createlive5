@@ -112,7 +112,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: machine_park Have 50 Create machines running simultaneously
     const machinePark = stressBasic.addChild("machine_park", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -121,6 +120,12 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.machine_park.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("challenge");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "machine_park_trigger",
+                    TRIGGER.custom("minecraft:machine_park_trigger")
+                );
             })
             .requireParentDone();
     });
@@ -210,7 +215,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    //TODO: wireless_connected Use Wireless Terminal from 120 Blocks away from the Terminal
     const wirelessConnected = wirelessTerminal.addChild("wireless_connected", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -226,7 +230,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: cross_dimensional Use Wireless Terminal in another Dimension from the Terminal
     const crossDimensional = wirelessConnected.addChild("cross_dimensional", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -363,7 +366,6 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: chunk_loaded Have a Chunk Loader loaded a chunk
     const chunkLoaded = terminalMaster.addChild("chunk_loaded", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -960,7 +962,6 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-    // TODO: Encahnt Library have every enchantment book
     const enchantLibrary = printedKnowledge.addChild("enchant_library", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -970,9 +971,516 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("challenge");
             })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("got_any_protection_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:protection\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_fire_protection_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_protection\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_feather_falling_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:feather_falling\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_blast_protection_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:blast_protection\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_projectile_protection_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:projectile_protection\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_respiration_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:respiration\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_aqua_affinity_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:aqua_affinity\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_thorns_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:thorns\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_depth_strider_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:depth_strider\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_frost_walker_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:frost_walker\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_binding_curse_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:binding_curse\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_soul_speed_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:soul_speed\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_sharpness_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:sharpness\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_smite_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:smite\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_bane_of_arthropods_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:bane_of_arthropods\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_knockback_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:knockback\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_fire_aspect_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:fire_aspect\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_looting_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:looting\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_sweeping_edge_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:sweeping\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_efficiency_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:efficiency\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_silk_touch_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:silk_touch\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_unbreaking_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:unbreaking\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_fortune_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:fortune\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_power_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:power\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_punch_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:punch\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_flame_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:flame\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_infinity_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:infinity\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_luck_of_the_sea_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:luck_of_the_sea\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_lure_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:lure\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_loyalty_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:loyalty\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_impaling_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:impaling\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_riptide_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:riptide\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_channeling_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:channeling\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_multishot_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:multishot\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_piercing_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:piercing\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_quick_charge_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:quick_charge\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_mending_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:mending\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_vanishing_curse_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:vanishing_curse\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_swift_sneak_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"minecraft:swift_sneak\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_backstabbing_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"farmersdelight:backstabbing\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_potato_recovery_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"create:potato_recovery\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_capacity_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"create:capacity\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_gravity_gun_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"create_sa:gravity_gun\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_digging_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"create_sa:digging\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_impact_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"create_sa:impact\"}]}"
+                            }
+                        ]
+                    }
+                }));
+                criteriaBuilder.add("got_any_hellfire_book", TRIGGER.fromJson({
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {
+                        "items": [
+                            {
+                                "item": "minecraft:enchanted_book",
+                                "nbt": "{StoredEnchantments:[{id:\"create_sa:hellfire\"}]}"
+                            }
+                        ]
+                    }
+                }));
+            })
             .requireParentDone();
     });
-
     const xpMillionaire = printedKnowledge.addChild("xp_millionaire", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {

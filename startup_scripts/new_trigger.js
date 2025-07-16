@@ -18,4 +18,6 @@ AdvJSEvents.trigger(event => {
 
     event.create("wireless_connected");            // Wireless terminal connected
     event.create("cross_dimension");               // Cross dimension wireless terminal
+
+    event.create("machine_park_trigger");          // Machine park (1000+ components in a single network)
 });
