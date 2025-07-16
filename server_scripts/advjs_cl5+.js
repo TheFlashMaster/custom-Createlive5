@@ -1,37 +1,3 @@
-/*
- * ============================================================================
- * ADVANCEMENT IMPLEMENTATION TODO SUMMARY
- * ============================================================================
- * 
- * This file contains advancement definitions that require implementation of 
- * criteria triggers to function properly. Below is a summary of required implementations:
- * 
- * IMMEDIATE ACTIONS NEEDED:
- * 1. Review custom_advancement_triggers.js to ensure custom triggers are registered
- * 2. Add missing criteria to advancements that currently have no criteria defined
- * 3. Implement custom triggers for complex conditions (stress levels, distances, etc.)
- * 4. Test advancement progression in-game
- * 
- * CUSTOM TRIGGERS TO IMPLEMENT:
- * - stress_unit_trigger: Monitor stress capacity levels ✓ IMPLEMENTED
- * - kinetic_impact: Detect high RPM kinetic networks ✓ IMPLEMENTED (uses stress_unit_trigger)
- * - distance_traveled: Track train/transportation distances
- * - fluid_capacity: Monitor fluid tank sizes
- * - spawner_count: Track mechanical spawner quantities
- * - chunk_loading: Monitor chunk loader usage
- * - automation_detection: Detect automated production systems
- * - long_conveyor_trigger: Detect long belt systems ✓ IMPLEMENTED (uses stress_unit_trigger)
- * 
- * CATEGORIES REQUIRING CRITERIA:
- * - Technology Branch: Most advancements need stress/power/automation detection
- * - Exploration Branch: Need travel distance, elevation, and area coverage detection
- * - Agriculture Branch: Need production quantity and automation detection
- * - Challenge Branch: Need boss kills, high-level achievements
- * 
- * NOTE: Search for "TODO:" comments throughout this file for specific implementation details
- * ============================================================================
- */
-
 AdvJSEvents.advancement((event) => {
     const { CONDITION, PREDICATE, PROVIDER, TRIGGER } = event;
 
@@ -146,7 +112,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: machine_park
+    // TODO: machine_park Have 50 Create machines running simultaneously
     const machinePark = stressBasic.addChild("machine_park", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -180,7 +146,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: auto_mechanisms
+    // TODO: auto_mechanisms - Build a machine to produce mechanisms automatically
     const autoMechanisms = mechanismMaster.addChild("auto_mechanisms", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -244,7 +210,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    //TODO: wireless_connected
+    //TODO: wireless_connected Use Wireless Terminal from 120 Blocks away from the Terminal
     const wirelessConnected = wirelessTerminal.addChild("wireless_connected", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -257,7 +223,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: cross_dimensional
+    // TODO: cross_dimensional Use Wireless Terminal in another Dimension from the Terminal
     const crossDimensional = wirelessConnected.addChild("cross_dimensional", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -270,7 +236,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: long_train_ride
+    // TODO: long_train_ride Ride 1000 Blocks on a Train
     const longTrainRide = longConveyors.addChild("long_train_ride", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -283,7 +249,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: reverse_gear
+    // TODO: reverse_gear Ride backwards 1000 Blocks on a Train
     const reverseGear = longTrainRide.addChild("reverse_gear", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -293,7 +259,16 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("goal");
             })
-            .requireParentDone();
+            .requireParentDone()
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "start_train_ride",
+                    TRIGGER.startRiding(playerBuilder => {
+                        // This will trigger when player starts riding any train
+                        // You might need to adjust the entity type based on Create mod's train entities
+                    })
+                );
+            });
     });
 
     const casingMaster = mechanismMaster.addChild("casing_master", (advBuilder) => {
@@ -348,7 +323,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: flamethrower_expert
+    // TODO: flamethrower_expert - Kill 20 Mobs with Flamethrower at the same time
     const flamethrowerExpert = exoskeleton.addChild("flamethrower_expert", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -377,7 +352,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: chunk_loaded
+    // TODO: chunk_loaded Have a Chunk Loader loaded a chunk
     const chunkLoaded = terminalMaster.addChild("chunk_loaded", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -390,7 +365,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: chunk_master
+    // TODO: chunk_master Load 16 Chunks with Chunk Loader
     const chunkMaster = chunkLoaded.addChild("chunk_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -403,7 +378,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: bad_luck
+    // TODO: bad_luck Fail 3 Mechanism in a row
     const badLuck = mechanismMaster.addChild("bad_luck", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -438,7 +413,7 @@ AdvJSEvents.advancement((event) => {
     // EXPLORATION & WORLD DEVELOPMENT BRANCH
     // ============================================================================
 
-    // TODO: island_hopping
+    // TODO: island_hopping - Be 24h on a different island
     const islandHopping = cl5extra.addChild("island_hopping", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -451,7 +426,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: caves_cliffs
+    // TODO: caves_cliffs Ride from heigh 0 to 320 with an elevator create
     const cavesCliffs = islandHopping.addChild("caves_cliffs", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -487,7 +462,7 @@ AdvJSEvents.advancement((event) => {
 
     });
 
-    // TODO: area_expansion
+    // TODO: area_expansion Build a 100x100 Block area
     const areaExpansion = cavesCliffs.addChild("area_expansion", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -500,7 +475,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: blueprint_master
+    // TODO: blueprint_master Build a blueprint with at least 256 blocks
     const blueprintMaster = areaExpansion.addChild("blueprint_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -730,7 +705,7 @@ AdvJSEvents.advancement((event) => {
             })
     });
 
-    // TODO: afk_master
+    // TODO: afk_master Be AFK for 4h
     const afkMaster = islandHopping.addChild("afk_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -747,7 +722,7 @@ AdvJSEvents.advancement((event) => {
     // AGRICULTURE & RESOURCE PRODUCTION BRANCH
     // ============================================================================
 
-    // TODO: mechanical_spawner
+    // TODO: mechanical_spawner Run Mechanical Spawner
     const mechanicalSpawner = cl5extra.addChild("mechanical_spawner", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -760,7 +735,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: spawner_plus
+    // TODO: spawner_plus Fully autonomous Mechanical Spawner that supplies itself with spawn fluid
     const spawnerPlus = mechanicalSpawner.addChild("spawner_plus", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -802,7 +777,7 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone()
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add(
-                    "giant_tank",TRIGGER.custom("minecraft:giant_tank_trigger")
+                    "giant_tank", TRIGGER.custom("minecraft:giant_tank_trigger")
                 );
             });
     });
@@ -817,8 +792,8 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setFrameType("task");
             })
             .criteria((criteriaBuilder) => {
-                criteriaBuilder.add("trade_armorer", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_armorer",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -827,8 +802,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_butcher", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_butcher",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -837,8 +812,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_cartographer", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_cartographer",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -847,8 +822,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_cleric", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_cleric",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -857,8 +832,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_farmer", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_farmer",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -867,8 +842,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_fisherman", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_fisherman",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -877,8 +852,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_fletcher", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_fletcher",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -887,8 +862,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_leatherworker", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_leatherworker",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -897,8 +872,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_librarian", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_librarian",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -907,8 +882,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_mason", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_mason",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -917,8 +892,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_shepherd", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_shepherd",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -927,8 +902,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_toolsmith", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_toolsmith",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -937,8 +912,8 @@ AdvJSEvents.advancement((event) => {
                         )
                     )
                 );
-                criteriaBuilder.add("trade_weaponsmith", 
-                    TRIGGER.villagerTrade(triggerBuilder => 
+                criteriaBuilder.add("trade_weaponsmith",
+                    TRIGGER.villagerTrade(triggerBuilder =>
                         triggerBuilder.setVillager(
                             villagerBuilder => {
                                 villagerBuilder.of("minecraft:villager");
@@ -965,7 +940,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-    // TODO: Fix
+    // TODO: Encahnt Library have every enchantment book
     const enchantLibrary = printedKnowledge.addChild("enchant_library", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -1003,7 +978,7 @@ AdvJSEvents.advancement((event) => {
     // ULTIMATE CHALLENGE BRANCH - Boss & Endgame Content
     // ============================================================================
 
-    // TODO: wither_hunter
+    // TODO: wither_hunter Have a fully automatic wither skeleton farm
     const witherHunter = mechanicalSpawner.addChild("wither_hunter", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -1016,7 +991,6 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: dragon_dominator
     const dragonDominator = witherHunter.addChild("dragon_dominator", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -1025,6 +999,13 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.challenge.dragon_dominator.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("challenge");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("five_dragon_kills",
+                    TRIGGER.tick(triggerBuilder => {
+                        triggerBuilder.addStat("minecraft:ender_dragon",Stats.ENTITY_KILLED, { min: 5 });
+                    })
+                );
             })
             .requireParentDone();
     });

@@ -85,6 +85,7 @@
             },
             triggerName: 'minecraft:printed_knowledge_trigger',
         }
+        
     };
 
 
