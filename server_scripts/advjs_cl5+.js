@@ -321,7 +321,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    // TODO: flamethrower_expert - Kill 20 Mobs with Flamethrower at the same time
+    //! Currently only one Zombie
     const flamethrowerExpert = exoskeleton.addChild("flamethrower_expert", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -330,6 +330,13 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.flamethrower_expert.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("flamethrower_kill", TRIGGER.playerKilledEntity(triggerBuilder => {
+                    triggerBuilder.setKillingBlow(damage_builder => {
+                            damage_builder.setDirectByType("create_sa:projectile_flamethrower_pr");
+                    });
+                }));
             })
             .requireParentDone();
     });
