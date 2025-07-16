@@ -15,4 +15,7 @@ AdvJSEvents.trigger(event => {
     event.create("very_long_train_ride_trigger"); // Very long train ride (over 1km)
     event.create("mechanical_spawner_trigger");    // Mechanical spawner
     event.create("chunk_loader_trigger");      // Chunk loader (mechanical)
+
+    event.create("wireless_connected");            // Wireless terminal connected
+    event.create("cross_dimension");               // Cross dimension wireless terminal
 });

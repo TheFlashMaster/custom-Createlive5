@@ -220,6 +220,9 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("goal");
             })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("wireless_terminal_used", TRIGGER.custom("minecraft:wireless_connected"));
+            })
             .requireParentDone();
     });
 
@@ -232,6 +235,9 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.cross_dimensional.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("challenge");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("wireless_terminal_used", TRIGGER.custom("minecraft:cross_dimension"));
             })
             .requireParentDone();
     });
@@ -334,7 +340,7 @@ AdvJSEvents.advancement((event) => {
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add("flamethrower_kill", TRIGGER.playerKilledEntity(triggerBuilder => {
                     triggerBuilder.setKillingBlow(damage_builder => {
-                            damage_builder.setDirectByType("create_sa:projectile_flamethrower_pr");
+                        damage_builder.setDirectByType("create_sa:projectile_flamethrower_pr");
                     });
                 }));
             })
