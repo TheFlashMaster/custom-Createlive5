@@ -273,7 +273,10 @@
 	"cl5.advjs.tech.cross_dimensional.description": "Use your terminal from another dimension",
 
 	"cl5.advjs.tech.long_train_ride.title": "Long Train Ride",
-	"cl5.advjs.tech.long_train_ride.description": "Run a train over 1,000 blocks without stopping",
+	"cl5.advjs.tech.long_train_ride.description": "Drive a train over 100m in a single ride",
+
+	"cl5.advjs.tech.very_long_train_ride.title": "Very Long Train Ride",
+	"cl5.advjs.tech.very_long_train_ride.description": "Drive a train over 1km in a single ride",
 
 	"cl5.advjs.tech.reverse_gear.title": "Reverse Gear",
 	"cl5.advjs.tech.reverse_gear.description": "Drive a train at least 100 blocks in reverse",

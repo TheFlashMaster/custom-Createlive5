@@ -84,8 +84,25 @@
 
             },
             triggerName: 'minecraft:printed_knowledge_trigger',
-        }
-        
+        },
+        mechanicalSpawner: {
+            block: 'create_mechanical_spawner:mechanical_spawner',
+            nbtPath: 'TankContent.FluidName',
+            condition: (fluidName) => {
+                // Check if the fluid is water
+                return fluidName != 'minecraft:empty';
+            },
+            triggerName: 'minecraft:mechanical_spawner_trigger'
+        },
+        chunkLoader: {
+            block: 'create_power_loader:andesite_chunk_loader',
+            nbtPath: 'Speed',
+            condition: (speed) => {
+                // Check if the chunk loader is active
+                return Math.abs(speed) >= 60;
+            },
+            triggerName: 'minecraft:chunk_loader_trigger'
+        },
     };
 
 

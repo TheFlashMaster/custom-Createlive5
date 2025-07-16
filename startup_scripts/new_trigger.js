@@ -11,4 +11,8 @@ AdvJSEvents.trigger(event => {
     event.create("giant_vault_trigger");           // Giant vault (3x9)
     event.create("giant_tank_trigger");            // Giant fluid tank (3x32)
     event.create("printed_knowledge_trigger");     // Printed knowledge (depot with items)
+    event.create("long_train_ride_trigger"); // Long train ride (over 100m)
+    event.create("very_long_train_ride_trigger"); // Very long train ride (over 1km)
+    event.create("mechanical_spawner_trigger");    // Mechanical spawner
+    event.create("chunk_loader_trigger");      // Chunk loader (mechanical)
 });

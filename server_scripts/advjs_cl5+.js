@@ -236,39 +236,37 @@ AdvJSEvents.advancement((event) => {
             .requireParentDone();
     });
 
-    // TODO: long_train_ride Ride 1000 Blocks on a Train
     const longTrainRide = longConveyors.addChild("long_train_ride", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
-                displayBuilder.setIcon("create:train_controls");
+                displayBuilder.setIcon("create:controls");
                 displayBuilder.setTitle({ translate: 'cl5.advjs.tech.long_train_ride.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.long_train_ride.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("goal");
             })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("ride_train", TRIGGER.custom("minecraft:long_train_ride_trigger"))
+            })
             .requireParentDone();
     });
-
-    // TODO: reverse_gear Ride backwards 1000 Blocks on a Train
-    const reverseGear = longTrainRide.addChild("reverse_gear", (advBuilder) => {
+    const veryLongTrainRide = longTrainRide.addChild("very_long_train_ride", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
-                displayBuilder.setIcon("create:train_controls");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.tech.reverse_gear.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.tech.reverse_gear.description' });
+                displayBuilder.setIcon("create:controls");
+                displayBuilder.setTitle({ translate: 'cl5.advjs.tech.very_long_train_ride.title' });
+                displayBuilder.setDescription({ translate: 'cl5.advjs.tech.very_long_train_ride.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("goal");
             })
-            .requireParentDone()
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add(
-                    "start_train_ride",
-                    TRIGGER.startRiding(playerBuilder => {
-                        // This will trigger when player starts riding any train
-                        // You might need to adjust the entity type based on Create mod's train entities
-                    })
+                    "ride_train",
+                    TRIGGER.custom("minecraft:very_long_train_ride_trigger")
                 );
-            });
+            })
+            .requireParentDone();
+
     });
 
     const casingMaster = mechanismMaster.addChild("casing_master", (advBuilder) => {
@@ -356,11 +354,14 @@ AdvJSEvents.advancement((event) => {
     const chunkLoaded = terminalMaster.addChild("chunk_loaded", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
-                displayBuilder.setIcon("chunkloaders:chunk_loader");
+                displayBuilder.setIcon("create_power_loader:andesite_chunk_loader");
                 displayBuilder.setTitle({ translate: 'cl5.advjs.tech.chunk_loaded.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.chunk_loaded.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("chunk_loader_trigger", TRIGGER.custom("minecraft:chunk_loader_trigger"));
             })
             .requireParentDone();
     });
@@ -369,7 +370,7 @@ AdvJSEvents.advancement((event) => {
     const chunkMaster = chunkLoaded.addChild("chunk_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
-                displayBuilder.setIcon("chunkloaders:chunk_loader");
+                displayBuilder.setIcon("create_power_loader:brass_chunk_loader");
                 displayBuilder.setTitle({ translate: 'cl5.advjs.tech.chunk_master.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.chunk_master.description' });
                 displayBuilder.setHidden(false);
@@ -722,24 +723,30 @@ AdvJSEvents.advancement((event) => {
     // AGRICULTURE & RESOURCE PRODUCTION BRANCH
     // ============================================================================
 
-    // TODO: mechanical_spawner Run Mechanical Spawner
+    //! Fix currently already when right clicking spawner
     const mechanicalSpawner = cl5extra.addChild("mechanical_spawner", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
-                displayBuilder.setIcon("create:mechanical_spawner");
+                displayBuilder.setIcon("create_mechanical_spawner:mechanical_spawner");
                 displayBuilder.setTitle({ translate: 'cl5.advjs.agri.mechanical_spawner.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.agri.mechanical_spawner.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
             })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "mechanical_spawner", TRIGGER.custom("minecraft:mechanical_spawner_trigger")
+                )
+            })
             .requireParentDone();
     });
 
-    // TODO: spawner_plus Fully autonomous Mechanical Spawner that supplies itself with spawn fluid
+
+    // TODO: spawner_plus Fully autonomous Mechanical Spawner for every mob     
     const spawnerPlus = mechanicalSpawner.addChild("spawner_plus", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
-                displayBuilder.setIcon("create:mechanical_spawner");
+                displayBuilder.setIcon("create_mechanical_spawner:mechanical_spawner");
                 displayBuilder.setTitle({ translate: 'cl5.advjs.agri.spawner_plus.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.agri.spawner_plus.description' });
                 displayBuilder.setHidden(false);
@@ -968,7 +975,7 @@ AdvJSEvents.advancement((event) => {
                     "high_xp_level",
                     TRIGGER.tick(triggerBuilder =>
                         //! Add minimum instead of exact level
-                        triggerBuilder.setNbt("{XpLevel:100}")
+                        triggerBuilder.setNbt("{XpLevel:500}")
                     )
                 );
             });
@@ -1003,7 +1010,7 @@ AdvJSEvents.advancement((event) => {
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add("five_dragon_kills",
                     TRIGGER.tick(triggerBuilder => {
-                        triggerBuilder.addStat("minecraft:ender_dragon",Stats.ENTITY_KILLED, { min: 5 });
+                        triggerBuilder.addStat("minecraft:ender_dragon", Stats.ENTITY_KILLED, { min: 5 });
                     })
                 );
             })
