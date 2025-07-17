@@ -11,7 +11,7 @@ AdvJSEvents.advancement((event) => {
             displayBuilder.setTitle({ translate: 'cl5.advjs.extra.title' });
             displayBuilder.setDescription({ translate: 'cl5.advjs.extra.description' });
             displayBuilder.setBackground(
-                "textures/gui/advancements/backgrounds/adventure.png"
+                "textures/gui/advancements/backgrounds/stone.png"
             );
             displayBuilder.setShowToast(true);
             displayBuilder.setAnnounceToChat(false);
@@ -101,7 +101,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.tech.high_stress.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.high_stress.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("goal");
+                displayBuilder.setFrameType("challenge");
             })
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add(
@@ -119,7 +119,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.tech.machine_park.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.machine_park.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("challenge");
+                displayBuilder.setFrameType("goal");
             })
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add(
@@ -268,7 +268,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.tech.very_long_train_ride.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.tech.very_long_train_ride.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("goal");
+                displayBuilder.setFrameType("challenge");
             })
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add(
@@ -360,7 +360,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.explore.drill_master.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.drill_master.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
+                displayBuilder.setFrameType("goal");
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
@@ -518,7 +518,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.explore.backpack_enthusiast.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.backpack_enthusiast.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("challenge");
+                displayBuilder.setFrameType("goal");
                 displayBuilder.setShowToast(true);
                 displayBuilder.setAnnounceToChat(true);
             })
@@ -540,7 +540,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.explore.template_collector.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.template_collector.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
+                displayBuilder.setFrameType("goal");
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
@@ -571,7 +571,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.explore.bucket_collector.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.bucket_collector.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
+                displayBuilder.setFrameType("challenge");
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
@@ -676,7 +676,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.explore.backpack_collector.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.backpack_collector.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("goal");
+                displayBuilder.setFrameType("challenge");
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
@@ -787,7 +787,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.explore.giant_vault.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.explore.giant_vault.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
+                displayBuilder.setFrameType("goal");
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
@@ -822,6 +822,9 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.agri.villager_trade.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("task");
+            })
+            .rewards((rewardsBuilder) => {
+                rewardsBuilder.addEffect("minecraft:hero_of_the_village", 5);
             })
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add("trade_armorer",
@@ -1498,7 +1501,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.challenge.xp_millionaire.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.challenge.xp_millionaire.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("task");
+                displayBuilder.setFrameType("challenge");
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
@@ -1524,7 +1527,7 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setTitle({ translate: 'cl5.advjs.challenge.wither_hunter.title' });
                 displayBuilder.setDescription({ translate: 'cl5.advjs.challenge.wither_hunter.description' });
                 displayBuilder.setHidden(false);
-                displayBuilder.setFrameType("challenge");
+                displayBuilder.setFrameType("goal");
             })
             .criteria((criteriaBuilder) => {
                 criteriaBuilder.add("wither_heads", TRIGGER.hasItems(

@@ -20,7 +20,6 @@ server_scripts/filling.js
 server_scripts/freezing.js
 server_scripts/haunting.js
 server_scripts/item_application.js
-server_scripts/loot.js
 server_scripts/milling.js
 server_scripts/mixing.js
 server_scripts/on_serverstart.js
