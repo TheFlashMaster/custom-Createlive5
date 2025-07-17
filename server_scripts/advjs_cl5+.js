@@ -152,6 +152,7 @@ AdvJSEvents.advancement((event) => {
     });
 
     // TODO: auto_mechanisms - Build a machine to produce mechanisms automatically
+    /*
     const autoMechanisms = mechanismMaster.addChild("auto_mechanisms", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -163,6 +164,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
+    */
     //! Fix length implementation/translation
     const longConveyors = cl5extra.addChild("long_conveyors", (advBuilder) => {
         advBuilder
@@ -362,7 +364,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone()
             .criteria((criteriaBuilder) => {
-                criteriaBuilder.add("drill_mined", TRIGGER.tick(triggerBuilder => triggerBuilder.addStat("create_sa:portable_drill", Stats.ITEM_USED, { min: 10000 })));
+                criteriaBuilder.add("drill_mined", TRIGGER.tick(triggerBuilder => triggerBuilder.addStat("create_sa:portable_drill", Stats.ITEM_USED, { min: 1000 })));
             });
     });
 
@@ -380,7 +382,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    /*
     // TODO: chunk_master Load 16 Chunks with Chunk Loader
     const chunkMaster = chunkLoaded.addChild("chunk_master", (advBuilder) => {
         advBuilder
@@ -393,8 +395,9 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     // TODO: bad_luck Fail 3 Mechanism in a row
+    /*
     const badLuck = mechanismMaster.addChild("bad_luck", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -406,7 +409,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     const stressMaster = stressBasic.addChild("stress_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -430,6 +433,7 @@ AdvJSEvents.advancement((event) => {
     // ============================================================================
 
     // TODO: island_hopping - Be 24h on a different island
+    /*
     const islandHopping = cl5extra.addChild("island_hopping", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -441,8 +445,9 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     // TODO: caves_cliffs Ride from heigh 0 to 320 with an elevator create
+    /*
     const cavesCliffs = islandHopping.addChild("caves_cliffs", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -454,7 +459,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     const higherPossible = exoskeleton.addChild("higher_possible", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -479,6 +484,7 @@ AdvJSEvents.advancement((event) => {
     });
 
     // TODO: area_expansion Build a 100x100 Block area
+    /*
     const areaExpansion = cavesCliffs.addChild("area_expansion", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -490,8 +496,9 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     // TODO: blueprint_master Build a blueprint with at least 256 blocks
+    /*
     const blueprintMaster = areaExpansion.addChild("blueprint_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -503,7 +510,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     const backpackEnthusiast = cl5extra.addChild("backpack_enthusiast", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -722,6 +729,7 @@ AdvJSEvents.advancement((event) => {
     });
 
     // TODO: afk_master Be AFK for 4h
+    /*
     const afkMaster = islandHopping.addChild("afk_master", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -733,6 +741,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
+    */
 
     // ============================================================================
     // AGRICULTURE & RESOURCE PRODUCTION BRANCH
@@ -757,7 +766,8 @@ AdvJSEvents.advancement((event) => {
     });
 
 
-    // TODO: spawner_plus Fully autonomous Mechanical Spawner for every mob     
+    // TODO: spawner_plus Fully autonomous Mechanical Spawner for every mob
+    /*
     const spawnerPlus = mechanicalSpawner.addChild("spawner_plus", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -769,7 +779,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    */
     const giantVault = cl5extra.addChild("giant_vault", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -1515,6 +1525,13 @@ AdvJSEvents.advancement((event) => {
                 displayBuilder.setDescription({ translate: 'cl5.advjs.challenge.wither_hunter.description' });
                 displayBuilder.setHidden(false);
                 displayBuilder.setFrameType("challenge");
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add("wither_heads", TRIGGER.hasItems(
+                    itemBuilder => {
+                        itemBuilder.add("minecraft:wither_skeleton_skull", 12);
+                    }
+                ));
             })
             .requireParentDone();
     });

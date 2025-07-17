@@ -258,7 +258,7 @@
 	"cl5.advjs.tech.massive_machinery.description": "Build a single assembly line that is at least 50 blocks long",
 
 	"cl5.advjs.tech.long_conveyors.title": "Long Conveyors",
-	"cl5.advjs.tech.long_conveyors.description": "Create a continuous conveyor belt system over 500 blocks long",
+	"cl5.advjs.tech.long_conveyors.description": "Create a conveyor belt 20 blocks long",
 
 	"cl5.advjs.tech.terminal_master.title": "Terminal Master",
 	"cl5.advjs.tech.terminal_master.description": "Craft a Crafting Terminal",
@@ -291,10 +291,10 @@
 	"cl5.advjs.tech.exoskeleton.description": "Craft an exoskeleton",
 
 	"cl5.advjs.explore.flamethrower_expert.title": "Flamethrower Expert",
-	"cl5.advjs.explore.flamethrower_expert.description": "Use the flamethrower to defeat at least 20 mobs simultaneously (Warning: May impact performance!)",
+	"cl5.advjs.explore.flamethrower_expert.description": "Use the flamethrower to defeat a mob",
 
 	"cl5.advjs.explore.drill_master.title": "Portable Drill Master",
-	"cl5.advjs.explore.drill_master.description": "Use the portable drill to mine 10,000 blocks",
+	"cl5.advjs.explore.drill_master.description": "Use the portable drill 1000 times to mine blocks",
 
 	"cl5.advjs.tech.chunk_loaded.title": "Chunk Loaded",
 	"cl5.advjs.tech.chunk_loaded.description": "Activate a chunk loader and keep 1 chunk loaded simultaneously",
@@ -306,7 +306,7 @@
 	"cl5.advjs.challenge.bad_luck.description": "Experience 3 mechanisms failing in a row when crafting them",
 
 	"cl5.advjs.tech.stress_master.title": "Stress Master",
-	"cl5.advjs.tech.stress_master.description": "Keep your stress capacity at over 99% utilization",
+	"cl5.advjs.tech.stress_master.description": "Keep your stress capacity at over 99% utilization at a capacity of at least 100,000 SU",
 
 	"cl5.advjs.challenge.island_hopping.title": "Island Hopping",
 	"cl5.advjs.challenge.island_hopping.description": "Spend a cumulative time of 24 hours on islands other than your starting island",
@@ -366,7 +366,7 @@
 	"cl5.advjs.challenge.xp_millionaire.description": "Reach an XP level of over 500",
 
 	"cl5.advjs.challenge.wither_hunter.title": "Wither Hunter",
-	"cl5.advjs.challenge.wither_hunter.description": "Build a fully automatic Wither farm",
+	"cl5.advjs.challenge.wither_hunter.description": "Have 12 wither skeleton skulls in your inventory at the same time",
 
 	"cl5.advjs.challenge.dragon_dominator.title": "Dragon Dominator",
 	"cl5.advjs.challenge.dragon_dominator.description": "Defeat the Ender Dragon five times"

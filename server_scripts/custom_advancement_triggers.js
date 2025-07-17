@@ -17,7 +17,7 @@
         stress_master: {
             block: 'create:stressometer',
             nbtPaths: ['Network.Stress', 'Network.Capacity'],
-            condition: (stress, capacity) => capacity > 0 && (stress / capacity) >= 0.99,
+            condition: (stress, capacity) => capacity > 100000 && (stress / capacity) >= 0.99,
             triggerName: 'minecraft:stress_master_trigger'
         },
         high_rpm: {
