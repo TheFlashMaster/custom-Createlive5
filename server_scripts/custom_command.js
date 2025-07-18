@@ -10,7 +10,7 @@
   }
 })*/
 //! Info Command for Server
-const message = ["",{"text":"Serverinformationen \u2013 Create Live 5","bold":true,"underlined":true},{"text":"\n\n"},{"text":"Chunkloader & Rezeptänderungen","bold":true},{"text":"\n\nChunkloader sind im Shop erhältlich. Es gibt nur ein begrenztes Sortiment.\n\nEinige Rezepte wurden im Vergleich zum Originalmodpack angepasst. Schau in JEI für alle neuen Crafting-Details!\n\nDu willst dieselben Einstellungen im Singleplayer? Lade dir einfach die KubeJS-Konfigurationsdatei vom Server herunter und integriere sie lokal.\n\nWenn du Hilfe brauchst kontaktiere @BlockworldHD oder @The_FlashMaster.\n\nViel Spaß beim Spielen\n"}]
+const message = ["",{"text":"Create Live 5: Wichtige Infos","bold":true,"underlined":true},{"text":"\n\nChunkloader:","bold":true},{"text":" Im Shop erhältlich, aber mit begrenzter Auswahl.\n"},{"text":"Rezepte:","bold":true},{"text":" Einige wurden angepasst. Schau in JEI für Details!\n"},{"text":"Singleplayer:","bold":true},{"text":" Die KubeJS-Konfigurationsdateien mit denselben Einstellungen findest du hier: "},{"text":"https://github.com/TheFlashMaster/custom-CreateLive5","underlined":true,"clickEvent":{"action":"open_url","value":"https://github.com/TheFlashMaster/custom-CreateLive5"}},{"text":"\n"},{"text":"Hilfe:","bold":true},{"text":" Kontaktiere "},{"text":"@","underlined":true},{"text":"BlockworldHD ","underlined":true,"clickEvent":{"action":"suggest_command","value":"/tell BlockworldHD"}},{"text":"oder "},{"text":"@","underlined":true},{"text":"The_FlashMaster","underlined":true,"clickEvent":{"action":"suggest_command","value":"/tell The_FlashMaster"}},{"text":".\n"}]
 ServerEvents.commandRegistry((event) => {
   //command registry event
   const { commands: Commands, arguments: Arguments } = event;
@@ -164,4 +164,3 @@ ServerEvents.commandRegistry((event) => {
     })
   );
 });
-
