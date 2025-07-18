@@ -42,10 +42,7 @@
                     let distance = getDistance(player.x, player.y, player.z, entity.x, entity.y, entity.z);
 
                     // Check if this is a Create train/contraption
-                    if (entityType.includes('create') &&
-                        (entityType.includes('carriage') ||
-                            entityType.includes('train') ||
-                            entityType.includes('contraption'))) {
+                    if (entityType === 'create:carriage_contraption') {
 
                         if (distance < closestTrainDistance) {
                             closestTrainDistance = distance;
