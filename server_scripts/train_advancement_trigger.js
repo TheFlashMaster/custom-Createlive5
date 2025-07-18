@@ -37,7 +37,6 @@
             for (let entity of nearbyEntities) {
                 if (entity !== player) {
                     let entityType = entity.type.toString();
-                    player.tell(`§a[Train Tracker] §7Detected Entity: ${entityType} at distance ${Math.round(distance)} blocks at position ${Math.round(entity.x)}, ${Math.round(entity.y)}, ${Math.round(entity.z)}`);
 
                     // Calculate distance using our helper function
                     let distance = getDistance(player.x, player.y, player.z, entity.x, entity.y, entity.z);
