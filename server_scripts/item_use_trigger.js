@@ -1,8 +1,6 @@
 (() => {
     ItemEvents.rightClicked(event => {
         if (event.item.id === 'toms_storage:ts.adv_wireless_terminal') {
-            event.player.tell(`Item used: ${event.item.id}`);
-            event.player.tell(`NBT Data: ${event.item.nbt}`);
             
             // Check if item has bind coordinates in NBT
             if (event.item.nbt && event.item.nbt.contains('BindX')) {
@@ -20,25 +18,19 @@
                     Math.pow(bindY - playerY, 2) + 
                     Math.pow(bindZ - playerZ, 2)
                 );
-                event.player.tell(`Distance to bind point: ${distance.toFixed(2)} blocks`);
                 if (distance > 120) {
                     // Trigger custom advancement
-                    event.player.tell(`Distance: ${distance.toFixed(2)}m - Triggering advancement!`);
-                    CustomTriggers.of("minecraft:wireless_connected").trigger(event.player);
                 }
 
                 if(event.item.nbt.contains('BindDim')) {
                     let bindDimension = event.item.nbt.getString('BindDim');
                     if( bindDimension === event.player.nbt.getString("Dimension")) {
-                        event.player.tell(`You are in the same dimension as the bind point: ${bindDimension}`);
                         return;
                     }
-                    event.player.tell(`Bind Dimension: ${bindDimension} - You are in: ${event.player.nbt.getString("Dimension")}`);
                     CustomTriggers.of("minecraft:cross_dimension").trigger(event.player);
                 }
                 else
                 {
-                    event.player.tell(`No bind dimension found in NBT data.`);
                 }
             }
         }

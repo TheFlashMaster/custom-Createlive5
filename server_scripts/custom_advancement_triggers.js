@@ -118,7 +118,6 @@
     // Helper function to safely get nested NBT values
     const getNBTValue = function (blockEntity, path, player) {
         if (!blockEntity) {
-            player.tell(`[CustomTrigger] No blockEntity provided`);
             return 0;
         }
 
@@ -130,13 +129,10 @@
             }
 
             if (!nbt) {
-                player.tell(`[CustomTrigger] No NBT data available for ${blockEntity.id}`);
                 return 0;
             }
 
             let value = nbt;
-            player.tell(`[CustomTrigger] Starting NBT traversal for path: ${path}`);
-            player.tell(`[CustomTrigger] Root NBT keys: ${Object.keys(nbt).join(', ')}`);
 
             // Traverse the NBT structure based on the path
             let pathParts = path.split('.');
@@ -145,60 +141,46 @@
             // Navigate through the path
             for (let i = 0; i < pathParts.length; i++) {
                 let part = pathParts[i];
-                player.tell(`[CustomTrigger] Looking for part: ${part} in current NBT level`);
 
                 if (value.contains(part)) {
                     value = value.getCompound(part);
-                    player.tell(`[CustomTrigger] Successfully navigated to ${part}`);
-                    player.tell(`[CustomTrigger] Keys at ${part}: ${Object.keys(value).join(', ')}`);
                 } else {
-                    player.tell(`[CustomTrigger] Path part '${part}' not found. Available keys: ${Object.keys(value).join(', ')}`);
                     return 0; // Path not found
                 }
             }
 
             // Now try to get the final value
-            player.tell(`[CustomTrigger] Looking for final key: ${finalKey}`);
 
             if (!value.contains(finalKey)) {
-                player.tell(`[CustomTrigger] Final key '${finalKey}' not found. Available keys: ${Object.keys(value).join(', ')}`);
                 return 0;
             }
 
             // Get the NBT tag type to determine how to read it
             let tag = value.get(finalKey);
-            player.tell(`[CustomTrigger] Found tag for ${finalKey}: ${tag} (type: ${tag.getClass().getSimpleName()})`);
 
             let finalValue;
 
             // Check the actual NBT tag type and handle accordingly
             let tagType = tag.getId();
-            player.tell(`[CustomTrigger] NBT tag ID: ${tagType}`);
 
             switch (tagType) {
                 case 1: // ByteTag
                     finalValue = value.getByte(finalKey);
-                    player.tell(`[CustomTrigger] Got byte value: ${finalValue}`);
                     break;
                 case 2: // ShortTag
                     finalValue = value.getShort(finalKey);
-                    player.tell(`[CustomTrigger] Got short value: ${finalValue}`);
                     break;
                 case 3: // IntTag
                     finalValue = value.getInt(finalKey);
-                    player.tell(`[CustomTrigger] Got int value: ${finalValue}`);
                     break;
                 case 4: // LongTag
                     finalValue = value.getLong(finalKey);
-                    player.tell(`[CustomTrigger] Got long value: ${finalValue}`);
                     break;
                 case 5: // FloatTag
                     finalValue = value.getFloat(finalKey);
-                    player.tell(`[CustomTrigger] Got float value: ${finalValue}`);
                     break;
                 case 6: // DoubleTag
                     finalValue = value.getDouble(finalKey);
-                    player.tell(`[CustomTrigger] Got double value: ${finalValue}`);
                     break;
                 case 8: // StringTag
                     let stringValue = value.getString(finalKey);
@@ -206,7 +188,6 @@
                     if (isNaN(finalValue)) {
                         finalValue = stringValue; // Keep as string if not a number
                     }
-                    player.tell(`[CustomTrigger] Got string value: ${stringValue} -> ${finalValue}`);
                     break;
                 case 9: // ListTag
                     let listValue = value.getList(finalKey, 10); // Try compound list first
@@ -220,21 +201,17 @@
                         }
                     }
                     finalValue = listValue;
-                    player.tell(`[CustomTrigger] Got list value with ${finalValue} items`);
                     break;
                 case 10: // CompoundTag
                     let compound = value.getCompound(finalKey);
                     finalValue = Object.keys(compound); // Return number of keys
-                    player.tell(`[CustomTrigger] Got compound with ${finalValue} keys`);
                     break;
                 default:
-                    player.tell(`[CustomTrigger] Unknown NBT tag type: ${tagType}, trying generic approach`);
                     // Fall back to string representation
                     finalValue = tag.toString();
                     break;
             }
 
-            player.tell(`[CustomTrigger] Final value for ${path}: ${finalValue} (type: ${typeof finalValue})`);
             return finalValue;
 
         } catch (error) {
@@ -251,10 +228,8 @@
         if (!nbt) {
             nbt = targetEntity.getUpdateTag();
         }
-        event.player.tell(`[CustomTrigger] Checking block: ${config.block} with NBT: ${(nbt)}`);
         // Special case: if block has Controller NBT, use controller block instead
         if (targetEntity && nbt && nbt.contains('Controller')) {
-            event.player.tell(`[CustomTrigger] Found Controller NBT for ${config.block}, checking controller block...`);
             try {
                 let controllerNBT = nbt.getCompound('Controller');
                 if (controllerNBT.contains('X') && controllerNBT.contains('Y') && controllerNBT.contains('Z')) {
@@ -267,20 +242,16 @@
                     let controllerBlock = event.level.getBlock(controllerPos.x, controllerPos.y, controllerPos.z);
                     if (controllerBlock && controllerBlock.entity) {
                         targetEntity = controllerBlock.entity;
-                        event.player.tell(`[CustomTrigger] Using controller block at ${controllerPos.x}, ${controllerPos.y}, ${controllerPos.z}`);
                     } else {
-                        event.player.tell(`[CustomTrigger] Controller block not found or has no entity`);
                     }
                 }
             } catch (error) {
                 event.player.tell(`[CustomTrigger] Error accessing controller: ${error}`);
             }
         } else {
-            event.player.tell(`[CustomTrigger] No Controller NBT found for ${config.block}, using block entity directly`);
         }
 
         if (!targetEntity) {
-            event.player.tell(`[CustomTrigger] No block entity found for ${config.block}`);
             return;
         }
 
@@ -296,30 +267,24 @@
             if (config.nbtPaths) {
                 // Multiple NBT paths
                 nbtValues = config.nbtPaths.map(path => getNBTValue(targetEntity, path, event.player));
-                event.player.tell(`[CustomTrigger] Checking ${config.block}: ${config.nbtPaths.join(', ')} = ${nbtValues.join(', ')}`);
 
                 if (config.condition.apply(null, nbtValues)) {
-                    event.player.tell(`[CustomTrigger] Triggering ${config.triggerName} for player ${event.player.username}`);
                     CustomTriggers.of(config.triggerName).trigger(event.player);
                 }
             } else if (config.nbtPath) {
                 // Single NBT path (backward compatibility)
                 let nbtValue = getNBTValue(targetEntity, config.nbtPath, event.player);
-                event.player.tell(`[CustomTrigger] Checking ${config.block}: ${config.nbtPath} = ${nbtValue}`);
 
                 if (config.condition(nbtValue)) {
-                    event.player.tell(`[CustomTrigger] Triggering ${config.triggerName} for player ${event.player.username}`);
                     CustomTriggers.of(config.triggerName).trigger(event.player);
                 }
             }
         } catch (error) {
-            event.player.tell(`[CustomTrigger] Error processing trigger for ${config.block}: ${error}`);
         }
     }
 
     BlockEvents.rightClicked(event => {
         // This is a catch-all for any block right-clicks that don't have specific handlers
-        event.player.tell(`[CustomTrigger] Right-clicked block: ${event.block.id}`);
         for (const config of Object.values(TRIGGER_CONFIGS)) {
             if (event.block.id === config.block) {
                 checkAndTriggerAdvancement(event, config);
