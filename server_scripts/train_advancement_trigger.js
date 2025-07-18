@@ -28,8 +28,8 @@
         try {
             // Method 1: Check nearby entities for Create trains
             let nearbyEntities = player.level.getEntitiesWithin(AABB.of(
-                player.x - 20, player.y - 10, player.z - 20,  // Increased search area
-                player.x + 20, player.y + 10, player.z + 20
+                player.x - 15, player.y - 5, player.z - 15,  // Increased search area
+                player.x + 15, player.y + 5, player.z + 15
             ));
 
             let closestTrainDistance = 999;
