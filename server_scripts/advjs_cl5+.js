@@ -183,24 +183,7 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
-    const terminalMaster = cl5extra.addChild("storage_system", (advBuilder) => {
-        advBuilder
-            .display((displayBuilder) => {
-                displayBuilder.setIcon("toms_storage:ts.crafting_terminal");
-                displayBuilder.setTitle({ translate: 'cl5.advjs.tech.terminal_master.title' });
-                displayBuilder.setDescription({ translate: 'cl5.advjs.tech.terminal_master.description' });
-                displayBuilder.setHidden(false);
-            })
-            .criteria((criteriaBuilder) => {
-                criteriaBuilder.add(
-                    "get_c_terminal",
-                    TRIGGER.hasItems("toms_storage:ts.crafting_terminal")
-                );
-            })
-            .requireParentDone();
-    });
-    const wirelessTerminal = terminalMaster.addChild("wireless_terminal", (advBuilder) => {
+    const wirelessTerminal = cl5extra.addChild("wireless_terminal", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
                 displayBuilder.setIcon("toms_storage:ts.wireless_terminal");
@@ -216,7 +199,22 @@ AdvJSEvents.advancement((event) => {
             })
             .requireParentDone();
     });
-
+    const terminalMaster = wirelessTerminal.addChild("storage_system", (advBuilder) => {
+        advBuilder
+            .display((displayBuilder) => {
+                displayBuilder.setIcon("toms_storage:ts.crafting_terminal");
+                displayBuilder.setTitle({ translate: 'cl5.advjs.tech.terminal_master.title' });
+                displayBuilder.setDescription({ translate: 'cl5.advjs.tech.terminal_master.description' });
+                displayBuilder.setHidden(false);
+            })
+            .criteria((criteriaBuilder) => {
+                criteriaBuilder.add(
+                    "get_c_terminal",
+                    TRIGGER.hasItems("toms_storage:ts.crafting_terminal")
+                );
+            })
+            .requireParentDone();
+    });
     const wirelessConnected = wirelessTerminal.addChild("wireless_connected", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
@@ -368,7 +366,7 @@ AdvJSEvents.advancement((event) => {
             });
     });
 
-    const chunkLoaded = terminalMaster.addChild("chunk_loaded", (advBuilder) => {
+    const chunkLoaded = wirelessConnected.addChild("chunk_loaded", (advBuilder) => {
         advBuilder
             .display((displayBuilder) => {
                 displayBuilder.setIcon("create_power_loader:andesite_chunk_loader");

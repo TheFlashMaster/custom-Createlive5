@@ -28,8 +28,8 @@
         try {
             // Method 1: Check nearby entities for Create trains
             let nearbyEntities = player.level.getEntitiesWithin(AABB.of(
-                player.x - 5, player.y - 3, player.z - 5,  // Increased search area
-                player.x + 5, player.y + 3, player.z + 5
+                player.x - 20, player.y - 10, player.z - 20,  // Increased search area
+                player.x + 20, player.y + 10, player.z + 20
             ));
 
             let closestTrainDistance = 999;
@@ -37,6 +37,7 @@
             for (let entity of nearbyEntities) {
                 if (entity !== player) {
                     let entityType = entity.type.toString();
+                    player.tell(`§a[Train Tracker] §7Detected Entity: ${entityType} at distance ${Math.round(distance)} blocks at position ${Math.round(entity.x)}, ${Math.round(entity.y)}, ${Math.round(entity.z)}`);
 
                     // Calculate distance using our helper function
                     let distance = getDistance(player.x, player.y, player.z, entity.x, entity.y, entity.z);
@@ -50,17 +51,14 @@
                         if (distance < closestTrainDistance) {
                             closestTrainDistance = distance;
                         }
-
-                        // More lenient distance check - trains can be large
-                        if (distance < 4.0) {  // Increased from 2.5 to 4.0
-                            return true;
-                        }
+                        return true; // Player is riding a Create train
                     }
                 }
             }
             return false;
 
         } catch (error) {
+            player.tell(`§c[Train Tracker] §7Error checking train: ${error.message}`);
             return false;
         }
     };

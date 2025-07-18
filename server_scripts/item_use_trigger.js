@@ -29,8 +29,16 @@
 
                 if(event.item.nbt.contains('BindDim')) {
                     let bindDimension = event.item.nbt.getString('BindDim');
-                    event.player.tell(`Bind Dimension: ${bindDimension}`);
+                    if( bindDimension === event.player.nbt.getString("Dimension")) {
+                        event.player.tell(`You are in the same dimension as the bind point: ${bindDimension}`);
+                        return;
+                    }
+                    event.player.tell(`Bind Dimension: ${bindDimension} - You are in: ${event.player.nbt.getString("Dimension")}`);
                     CustomTriggers.of("minecraft:cross_dimension").trigger(event.player);
+                }
+                else
+                {
+                    event.player.tell(`No bind dimension found in NBT data.`);
                 }
             }
         }

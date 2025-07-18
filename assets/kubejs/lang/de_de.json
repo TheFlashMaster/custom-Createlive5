@@ -240,82 +240,55 @@
 	"cl5.advjs.stress.stress_basics.description": "Erreiche ein Stresslevel von über 100.000 SU",
 
 	"cl5.advjs.tech.steam_giant.title": "Dampfmaschinen-Gigant",
-	"cl5.advjs.tech.steam_giant.description": "Errichte eine Dampfmaschine der Größe 10x10x10, die maximale Leistung erbringt",
+	"cl5.advjs.tech.steam_giant.description": "Errichte eine Level 18 Dampfmaschine",
 
 	"cl5.advjs.tech.high_stress.title": "Hoher Stress",
 	"cl5.advjs.tech.high_stress.description": "Erreiche ein Stresslevel von über 1.000.000 SU",
 
 	"cl5.advjs.tech.machine_park.title": "Maschinenpark",
-	"cl5.advjs.tech.machine_park.description": "Baue 50 verschiedene Create-Maschinen, die gleichzeitig aktiv sind",
+	"cl5.advjs.tech.machine_park.description": "Baue ein einziges kinetisches Netzwerk mit über 1000 Create-Komponenten und klicke einen Stressometer darin an.",
 
 	"cl5.advjs.tech.mechanism_master.title": "Mechanismus-Meister",
 	"cl5.advjs.tech.mechanism_master.description": "Stelle alle 7 verschiedenen Mechanismen mindestens einmal her",
 
-	"cl5.advjs.tech.auto_mechanisms.title": "Vollautomatische Mechanismen",
-	"cl5.advjs.tech.auto_mechanisms.description": "Erstelle ein System, das Mechanismen vollautomatisch herstellt, ohne dein Eingreifen",
-
-	"cl5.advjs.tech.massive_machinery.title": "Massiver Maschinenbau",
-	"cl5.advjs.tech.massive_machinery.description": "Baue ein einzelnes Fließband, das mindestens 50 Blöcke lang ist",
-
 	"cl5.advjs.tech.long_conveyors.title": "Lange Förderbänder",
-	"cl5.advjs.tech.long_conveyors.description": "Erstelle ein zusammenhängendes Förderbandsystem von über 500 Blöcken Länge",
+	"cl5.advjs.tech.long_conveyors.description": "Erstelle ein Förderband mit 20 Blöcken Länge",
 
 	"cl5.advjs.tech.terminal_master.title": "Terminal Meister",
 	"cl5.advjs.tech.terminal_master.description": "Stelle dein erstes Create-Terminal her",
 
+	"cl5.advjs.tech.wireless_terminal.title": "Kabellos",
+	"cl5.advjs.tech.wireless_terminal.description": "Stelle ein kabelloses Terminal her",
+
 	"cl5.advjs.tech.wireless_connected.title": "Kabellos verbunden",
-	"cl5.advjs.tech.wireless_connected.description": "Nutze dein Terminal aus 100 Blöcken Entfernung",
+	"cl5.advjs.tech.wireless_connected.description": "Nutze dein Terminal aus 200 Blöcken Entfernung",
 
 	"cl5.advjs.tech.cross_dimensional.title": "Cross-Dimensional",
 	"cl5.advjs.tech.cross_dimensional.description": "Nutze dein Terminal aus einer anderen Dimension",
 
 	"cl5.advjs.tech.long_train_ride.title": "Lange Zugfahrt",
-	"cl5.advjs.tech.long_train_ride.description": "Lasse einen Zug über 1.000 Blöcke weit fahren, ohne anzuhalten",
-
-	"cl5.advjs.tech.reverse_gear.title": "Rückwärtsgang",
-	"cl5.advjs.tech.reverse_gear.description": "Fahre einen Zug mindestens 100 Blöcke weit rückwärts",
+	"cl5.advjs.tech.long_train_ride.description": "Fahre mit einem Zug mindestens 100 Blöcke weit",
 
 	"cl5.advjs.challenge.casing_master.title": "Gehäuse-Meister",
 	"cl5.advjs.challenge.casing_master.description": "Platziere jedes der 16 verschiedenen Gehäusetypen",
-
-	"cl5.advjs.tech.creative_power.title": "Kreative Macht",
-	"cl5.advjs.tech.creative_power.description": "Stelle alle drei Creative-Maschinen her",
 
 	"cl5.advjs.tech.exoskeleton.title": "Exoskelett",
 	"cl5.advjs.tech.exoskeleton.description": "Crafte ein Exoskelett",
 
 	"cl5.advjs.explore.flamethrower_expert.title": "Flammenwerfer-Experte",
-	"cl5.advjs.explore.flamethrower_expert.description": "Nutze den Flammenwerfer, um mindestens 20 Mobs gleichzeitig zu besiegen (Vorsicht: Kann Performance beeinträchtigen!)",
+	"cl5.advjs.explore.flamethrower_expert.description": "Nutze den Flammenwerfer, um ein Mob zu töten",
 
 	"cl5.advjs.explore.drill_master.title": "Tragbarer Bohrer-Meister",
-	"cl5.advjs.explore.drill_master.description": "Nutze den tragbaren Bohrer, um 10.000 Blöcke abzubauen",
+	"cl5.advjs.explore.drill_master.description": "Nutze den tragbaren Bohrer 100 Mal, um Blöcke abzubauen",
 
 	"cl5.advjs.tech.chunk_loaded.title": "Chunk-Geladen",
 	"cl5.advjs.tech.chunk_loaded.description": "Aktiviere einen Chunk-Loader und halte 1 Chunk gleichzeitig geladen",
 
-	"cl5.advjs.tech.chunk_master.title": "Chunk-Meister",
-	"cl5.advjs.tech.chunk_master.description": "Lade mindestens 16 Chunks mit Chunk-Loadern gleichzeitig",
-
-	"cl5.advjs.challenge.bad_luck.title": "Pechsträhne",
-	"cl5.advjs.challenge.bad_luck.description": "Erlebe, wie 3 Mechanismen nacheinander fehlschlagen, wenn du sie herstellst",
-
 	"cl5.advjs.tech.stress_master.title": "Stress-Meister",
-	"cl5.advjs.tech.stress_master.description": "Halte deine Stresskapazität für 10 Minuten bei über 99% Auslastung",
-
-	"cl5.advjs.challenge.island_hopping.title": "Insel-Hopping",
-	"cl5.advjs.challenge.island_hopping.description": "Verbringe eine kumulierte Zeit von 24 Stunden auf anderen Inseln als deiner Startinsel",
-
-	"cl5.advjs.explore.caves_cliffs.title": "Höhlen & Klippen-Erkundung",
-	"cl5.advjs.explore.caves_cliffs.description": "Erreiche die Bedrock-Ebene und die Bauhöhenbegrenzung in den Höhlen und Klippen mit einem Create-Aufzug",
+	"cl5.advjs.tech.stress_master.description": "Halte deine Stresskapazität bei über 99% Auslastung",
 
 	"cl5.advjs.explore.higher_possible.title": "Höher als möglich",
-	"cl5.advjs.explore.higher_possible.description": "Fliege 5 Minuten über der maximalen Bauhöhe",
-
-	"cl5.advjs.explore.area_expansion.title": "Flächenausbau",
-	"cl5.advjs.explore.area_expansion.description": "Erschaffe eine bebaute Fläche von 100x100 Blöcken auf deiner Skyblock-Insel",
-
-	"cl5.advjs.explore.blueprint_master.title": "Blaupausen-Großmeister",
-	"cl5.advjs.explore.blueprint_master.description": "Erstelle eine Blaupause, die eine Struktur von mindestens 256 Blöcken enthält",
+	"cl5.advjs.explore.higher_possible.description": "Fliege über der maximalen Bauhöhe",
 
 	"cl5.advjs.explore.backpack_enthusiast.title": "Rucksack-Enthusiast",
 	"cl5.advjs.explore.backpack_enthusiast.description": "Fülle den größtmöglichen Rucksack komplett mit Gegenständen",
@@ -329,26 +302,17 @@
 	"cl5.advjs.explore.template_collector.title": "Template-Sammler",
 	"cl5.advjs.explore.template_collector.description": "Sammle alle verschiedenen Templates im Spiel",
 
-	"cl5.advjs.explore.afk_master.title": "AFK-Meister",
-	"cl5.advjs.explore.afk_master.description": "Verbringe 4 Stunden AFK (Away From Keyboard) auf deiner Insel",
-
 	"cl5.advjs.agri.mechanical_spawner.title": "Mechanischer Spawner",
 	"cl5.advjs.agri.mechanical_spawner.description": "Baue einen vollautomatischen mechanischen Spawner",
 
-	"cl5.advjs.agri.spawner_plus.title": "Mechanischer Spawner+",
-	"cl5.advjs.agri.spawner_plus.description": "Baue einen vollautomatischen mechanischen Spawner für jedes Mob",
-
-	"cl5.advjs.agri.fluid_farm.title": "Flüssigkeitsfarm",
-	"cl5.advjs.agri.fluid_farm.description": "Baue Tanks mit jeder flüssigen Ressource (z.B. Lava, Wasser, Milchshakes, etc.)",
-
 	"cl5.advjs.agri.giant_tank.title": "Riesiger Flüssigkeitstank",
-	"cl5.advjs.agri.giant_tank.description": "Baue einen Flüssigkeitstank mit einer Kapazität von über 1.000.000 Einheiten",
+	"cl5.advjs.agri.giant_tank.description": "Baue einen Flüssigkeitstank 3x3x32 Blöcke groß",
 
 	"cl5.advjs.explore.giant_vault.title": "Riesiger Tresor",
-	"cl5.advjs.explore.giant_vault.description": "Erstelle einen Tresor mit einem Fassungsvermögen von über 1.000.000 Gegenständen",
+	"cl5.advjs.explore.giant_vault.description": "Erstelle einen Tresor der Größe 3x3x9 Blöcke",
 
 	"cl5.advjs.agri.villager_trade.title": "Dorfbewohner-Handel",
-	"cl5.advjs.agri.villager_trade.description": "Handle erfolgreich mit 10 verschiedenen Dorfbewohnern auf deiner Insel",
+	"cl5.advjs.agri.villager_trade.description": "Handle erfolgreich mit allen Berufen von Dorfbewohnern",
 
 	"cl5.advjs.agri.printed_knowledge.title": "Gedrucktes Wissen",
 	"cl5.advjs.agri.printed_knowledge.description": "Drucke dein erstes verzaubertes Buch",
@@ -360,8 +324,12 @@
 	"cl5.advjs.challenge.xp_millionaire.description": "Erreiche ein XP-Level von über 500",
 
 	"cl5.advjs.challenge.wither_hunter.title": "Wither-Jäger",
-	"cl5.advjs.challenge.wither_hunter.description": "Baue eine vollautomatische Wither-Farm",
+	"cl5.advjs.challenge.wither_hunter.description": "Habe 12 Wither-Schädel in deinem Inventar",
 
 	"cl5.advjs.challenge.dragon_dominator.title": "Drachen-Dominator",
-	"cl5.advjs.challenge.dragon_dominator.description": "Besiege den Enderdrachen fünfmal"
+	"cl5.advjs.challenge.dragon_dominator.description": "Besiege den Enderdrachen fünfmal",
+
+	"cl5.advjs.tech.very_long_train_ride.title": "Sehr lange Zugfahrt",
+	"cl5.advjs.tech.very_long_train_ride.description": "Fahre mit einem Zug über 1 km in einer einzigen Fahrt"
+
 }

@@ -251,12 +251,6 @@
 	"cl5.advjs.tech.mechanism_master.title": "Mechanism Master",
 	"cl5.advjs.tech.mechanism_master.description": "Craft all 7 different mechanisms.",
 
-	"cl5.advjs.tech.auto_mechanisms.title": "Automated Mechanisms",
-	"cl5.advjs.tech.auto_mechanisms.description": "Create a system that automatically crafts mechanisms without your intervention",
-
-	"cl5.advjs.tech.massive_machinery.title": "Massive Machinery",
-	"cl5.advjs.tech.massive_machinery.description": "Build a single assembly line that is at least 50 blocks long",
-
 	"cl5.advjs.tech.long_conveyors.title": "Long Conveyors",
 	"cl5.advjs.tech.long_conveyors.description": "Create a conveyor belt 20 blocks long",
 
@@ -278,14 +272,8 @@
 	"cl5.advjs.tech.very_long_train_ride.title": "Very Long Train Ride",
 	"cl5.advjs.tech.very_long_train_ride.description": "Drive a train over 1km in a single ride",
 
-	"cl5.advjs.tech.reverse_gear.title": "Reverse Gear",
-	"cl5.advjs.tech.reverse_gear.description": "Drive a train at least 100 blocks in reverse",
-
 	"cl5.advjs.challenge.casing_master.title": "Casing Master",
 	"cl5.advjs.challenge.casing_master.description": "Place each of the 19 different casing types",
-
-	"cl5.advjs.tech.creative_power.title": "Creative Power",
-	"cl5.advjs.tech.creative_power.description": "Craft all three Creative machines",
 
 	"cl5.advjs.tech.exoskeleton.title": "Exoskeleton",
 	"cl5.advjs.tech.exoskeleton.description": "Craft an exoskeleton",
@@ -302,26 +290,11 @@
 	"cl5.advjs.tech.chunk_master.title": "Chunk Master",
 	"cl5.advjs.tech.chunk_master.description": "Load at least 16 chunks with chunk loaders at the same time",
 
-	"cl5.advjs.challenge.bad_luck.title": "Bad Luck",
-	"cl5.advjs.challenge.bad_luck.description": "Experience 3 mechanisms failing in a row when crafting them",
-
 	"cl5.advjs.tech.stress_master.title": "Stress Master",
 	"cl5.advjs.tech.stress_master.description": "Keep your stress capacity at over 99% utilization at a capacity of at least 100,000 SU",
 
-	"cl5.advjs.challenge.island_hopping.title": "Island Hopping",
-	"cl5.advjs.challenge.island_hopping.description": "Spend a cumulative time of 24 hours on islands other than your starting island",
-
-	"cl5.advjs.explore.caves_cliffs.title": "Caves & Cliffs Exploration",
-	"cl5.advjs.explore.caves_cliffs.description": "Reach bedrock level and the build height limit in caves and cliffs with a Create elevator",
-
 	"cl5.advjs.explore.higher_possible.title": "Higher Than Possible",
 	"cl5.advjs.explore.higher_possible.description": "Fly above the maximum build height",
-
-	"cl5.advjs.explore.area_expansion.title": "Area Expansion",
-	"cl5.advjs.explore.area_expansion.description": "Create a built area of 100x100 blocks on your skyblock island",
-
-	"cl5.advjs.explore.blueprint_master.title": "Blueprint Grandmaster",
-	"cl5.advjs.explore.blueprint_master.description": "Create a blueprint containing a structure of at least 256 blocks",
 
 	"cl5.advjs.explore.backpack_enthusiast.title": "Backpack Enthusiast",
 	"cl5.advjs.explore.backpack_enthusiast.description": "Upgrade your backpack to the maximum",
@@ -335,17 +308,8 @@
 	"cl5.advjs.explore.template_collector.title": "Template Collector",
 	"cl5.advjs.explore.template_collector.description": "Collect all different templates in the game",
 
-	"cl5.advjs.explore.afk_master.title": "AFK Master",
-	"cl5.advjs.explore.afk_master.description": "Spend 4 hours AFK (Away From Keyboard) on your island",
-
 	"cl5.advjs.agri.mechanical_spawner.title": "Mechanical Spawner",
 	"cl5.advjs.agri.mechanical_spawner.description": "Build a fully automatic mechanical spawner",
-
-	"cl5.advjs.agri.spawner_plus.title": "Mechanical Spawner+",
-	"cl5.advjs.agri.spawner_plus.description": "Build a fully automatic mechanical spawner for every mob",
-
-	"cl5.advjs.agri.fluid_farm.title": "Fluid Farm",
-	"cl5.advjs.agri.fluid_farm.description": "Build tanks with every liquid resource (e.g. lava, water, miklshakes, etc.)",
 
 	"cl5.advjs.agri.giant_tank.title": "Giant Fluid Tank",
 	"cl5.advjs.agri.giant_tank.description": "Build a fluid tank with with a size of 3x32 blocks",
@@ -354,7 +318,7 @@
 	"cl5.advjs.explore.giant_vault.description": "Create a vault with a size of 3x9 blocks",
 
 	"cl5.advjs.agri.villager_trade.title": "Villager Trade",
-	"cl5.advjs.agri.villager_trade.description": "Successfully trade with 10 different villagers on your island",
+	"cl5.advjs.agri.villager_trade.description": "Successfully trade with all professions of villagers",
 
 	"cl5.advjs.agri.printed_knowledge.title": "Printed Knowledge",
 	"cl5.advjs.agri.printed_knowledge.description": "Print your first enchanted book",
