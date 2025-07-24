@@ -123,7 +123,6 @@
             // Save immediately to prevent repeated messages
             savePlayerData(player, data);
 
-            player.tell(`§a[Train Tracker] §7Started train journey at ${Math.round(player.x)}, ${Math.round(player.y)}, ${Math.round(player.z)}`);
 
         } else if (!isCurrentlyOnTrain && data.isRiding) {
             // Player is not on train but was riding - start or continue cooldown
@@ -140,14 +139,12 @@
             // Only stop riding if cooldown has expired
             if (data.exitCooldown <= 0) {
                 data.isRiding = false;
-                player.tell(`§c[Train Tracker] §7Stopped train journey at ${Math.round(player.x)}, ${Math.round(player.y)}, ${Math.round(player.z)}`);
                 
                 // Calculate total distance traveled
                 let endX = player.x;
                 let endY = player.y;
                 let endZ = player.z;
                 let distanceTraveled = getDistance(data.startX, data.startY, data.startZ, endX, endY, endZ);
-                player.tell(`§a[Train Tracker] §7Total distance traveled this journey: §e${Math.round(distanceTraveled)} blocks`);
                 checkDistanceAchievements(player, distanceTraveled);
                 
                 // Save data to persistent storage

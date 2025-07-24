@@ -9,6 +9,7 @@
     event.cancel()
   }
 })*/
+
 //! Info Command for Server
 const message = ["",{"text":"Create Live 5: Wichtige Infos","bold":true,"underlined":true},{"text":"\n\nChunkloader:","bold":true},{"text":" Im Shop erhältlich, aber mit begrenzter Auswahl.\n"},{"text":"Rezepte:","bold":true},{"text":" Einige wurden angepasst. Schau in JEI für Details!\n"},{"text":"Singleplayer:","bold":true},{"text":" Die KubeJS-Konfigurationsdateien mit denselben Einstellungen findest du hier: "},{"text":"https://github.com/TheFlashMaster/custom-CreateLive5","underlined":true,"clickEvent":{"action":"open_url","value":"https://github.com/TheFlashMaster/custom-CreateLive5"}},{"text":"\n"},{"text":"Hilfe:","bold":true},{"text":" Kontaktiere "},{"text":"@","underlined":true},{"text":"BlockworldHD ","underlined":true,"clickEvent":{"action":"suggest_command","value":"/tell BlockworldHD"}},{"text":"oder "},{"text":"@","underlined":true},{"text":"The_FlashMaster","underlined":true,"clickEvent":{"action":"suggest_command","value":"/tell The_FlashMaster"}},{"text":".\n"}]
 ServerEvents.commandRegistry((event) => {
