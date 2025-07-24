@@ -1,3 +1,4 @@
+/*
 const DATA_KEY = 'spawn_protected_blocks';
 let originalSpawnBlocks = new Set();
 const SPAWN_RADIUS = 8; // Radius around spawn to protect
@@ -107,3 +108,4 @@ BlockEvents.placed(event => {
         event.cancel();
     }
 });
+*/
